@@ -40,7 +40,7 @@
 					<object class="IBUISearchBar" id="561074791">
 						<reference key="NSNextResponder" ref="324345211"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{320, 44}</string>
+						<string key="NSFrameSize">{320, 88}</string>
 						<reference key="NSSuperview" ref="324345211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -50,6 +50,11 @@
 						<object class="IBUITextInputTraits" key="IBTextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<array key="IBScopeButtonTitles">
+							<string>Time sort</string>
+							<string>tf*idf</string>
+						</array>
+						<bool key="IBShowsScopeBar">YES</bool>
 					</object>
 				</array>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -75,7 +80,7 @@
 			<object class="IBUISearchDisplayController" id="198184772">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUIViewController" id="522667140">
+			<object class="IBUIViewController" id="285725954">
 				<string key="IBUINibName">DocumentViewController</string>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -108,7 +113,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">documentViewController</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="522667140"/>
+						<reference key="destination" ref="285725954"/>
 					</object>
 					<int key="connectionID">23</int>
 				</object>
@@ -200,7 +205,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="522667140"/>
+						<reference key="object" ref="285725954"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>

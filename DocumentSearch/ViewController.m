@@ -136,11 +136,11 @@
 #pragma mark -
 #pragma mark Content Filtering
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+- (void)filterContentForSearchText:(NSString*)searchText scope:(DocumentsIndexSearchOrder)scope
 {
     NSLog(@"Start filtering: %@", searchText);
 
-    self.filteredListContent = [self.index searchDocuments:searchText];
+    self.filteredListContent = [self.index searchDocuments:searchText order:scope];
 
     NSLog(@"Finish filtering: %@", searchText);
 }
@@ -150,8 +150,8 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [self filterContentForSearchText:searchString scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    [self filterContentForSearchText:searchString
+                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
 
     return YES;
 }
