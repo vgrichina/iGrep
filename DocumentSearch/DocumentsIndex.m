@@ -56,11 +56,12 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         }
 
         if (!Exec(db,
-            @"CREATE TABLE IF NOT EXISTS terms (term TEXT, num_documents INTEGER); \
-              CREATE TABLE IF NOT EXISTS documents (uri TEXT); \
+            @"CREATE TABLE IF NOT EXISTS terms (term TEXT COLLATE NOCASE, num_documents INTEGER); \
+              CREATE TABLE IF NOT EXISTS documents (uri TEXT, date INTEGER); \
               CREATE TABLE IF NOT EXISTS documents_terms (term_id INTEGER, document_id INTEGER, occurences INTEGER); \
               CREATE INDEX IF NOT EXISTS term_idx ON terms (term); \
-              CREATE INDEX IF NOT EXISTS document_idx ON documents (uri); \
+              CREATE INDEX IF NOT EXISTS document_uri_idx ON documents (uri); \
+              CREATE INDEX IF NOT EXISTS document_date_idx ON documents (date); \
               CREATE INDEX IF NOT EXISTS documents_terms_idx ON documents_terms (term_id, document_id); \
             ", nop)) {
             return nil;
@@ -113,7 +114,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     }
 
     // Insert document
-    if (!Exec(db, [NSString stringWithFormat: @"INSERT INTO documents (uri) VALUES ('%@')", document.uri], nop)) {
+    if (!Exec(db, [NSString stringWithFormat: @"INSERT INTO documents (uri, date) VALUES ('%@', %ld)",
+                   document.uri, (long long)[document.date timeIntervalSince1970]], nop)) {
         return NO;
     }
     sqlite3_int64 documentId = sqlite3_last_insert_rowid(db);
@@ -198,7 +200,9 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         i++;
     }
 
-    [sql appendString:@" LIMIT 10"];
+    [sql appendFormat:@" ORDER BY DATE DESC"];
+
+    [sql appendString:@" LIMIT 30"];
 
     NSLog(@"sql: %@", sql);
 
