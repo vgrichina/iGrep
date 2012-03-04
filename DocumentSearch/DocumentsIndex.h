@@ -14,6 +14,8 @@
 
 @interface DocumentsIndex : NSObject {
     sqlite3 *db;
+    sqlite3_stmt *selectTermStmt;
+    sqlite3_stmt *insertTermStmt;
     sqlite3_stmt *updateTermStmt;
     sqlite3_stmt *insertDocumentTermStmt;
 }
