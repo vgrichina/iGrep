@@ -179,7 +179,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     // Build SQL string
 
     NSMutableString *sql = [NSMutableString string];
-    [sql appendString:@"SELECT uri FROM documents"];
+    [sql appendString:@"SELECT DISTINCT uri FROM documents"];
     int i = 0;
     for (NSString *term in queryTerms) {
         [sql appendFormat:@", terms as t%d, documents_terms as dt%d", i, i];
@@ -189,7 +189,12 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     [sql appendString:@" WHERE 1"];
     i = 0;
     for (NSString *term in queryTerms) {
-        [sql appendFormat:@" AND t%d.term = '%@' AND t%d.rowid = dt%d.term_id AND dt%d.document_id = documents.rowid", i, term, i, i, i];
+        if (i == queryTerms.count - 1) {
+            [sql appendFormat:@" AND t%d.term LIKE '%@%%'", i, term];
+        } else {
+            [sql appendFormat:@" AND t%d.term = '%@'", i, term];
+        }
+        [sql appendFormat:@" AND t%d.rowid = dt%d.term_id AND dt%d.document_id = documents.rowid", i, i, i];
         i++;
     }
 
