@@ -49,18 +49,18 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 - (id)initWithDatabase:(NSString *)database
 {
     if ((self = [super init])) {
-        if (sqlite3_open([[NSBundle mainBundle] pathForResource:@"names" ofType:@"sqlite"].UTF8String, &db)) {
+        if (sqlite3_open(database.UTF8String, &db)) {
             NSLog(@"Cannot open database: %s", sqlite3_errmsg(db));
             sqlite3_close(db);
             return nil;
         }
 
         if (!Exec(db,
-            @"CREATE TABLE IF NOT EXISTS terms (term TEXT, num_documents INTEGER); \
-              CREATE TABLE IF NOT EXISTS documents (uri TEXT); \
+            @"CREATE TABLE IF NOT EXISTS terms (term TEXT PRIMARY KEY, num_documents INTEGER); \
+              CREATE TABLE IF NOT EXISTS documents (uri TEXT PRIMARY KEY); \
               CREATE TABLE IF NOT EXISTS documents_terms (term_id INTEGER, document_id INTEGER, occurences INTEGER); \
-              CREATE INDEX term_idx ON terms (term); \
-              CREATE INDEX documents_terms_idx ON documents_terms (term_id, document_id); \
+              CREATE INDEX IF NOT EXISTS term_idx ON terms (term); \
+              CREATE INDEX IF NOT EXISTS documents_terms_idx ON documents_terms (term_id, document_id); \
             ", nop)) {
             return nil;
         }
@@ -125,13 +125,11 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 
         // Insert relation between document and term
         if (IsOk(db, sqlite3_reset(insertDocumentTermStmt)) && IsOk(db, sqlite3_clear_bindings(insertDocumentTermStmt)) &&
-            IsOk(db, sqlite3_bind_int64(insertDocumentTermStmt, 1, documentId)) &&
-            IsOk(db, sqlite3_bind_int64(insertDocumentTermStmt, 2, termId)) &&
+            IsOk(db, sqlite3_bind_int64(insertDocumentTermStmt, 1, termId)) &&
+            IsOk(db, sqlite3_bind_int64(insertDocumentTermStmt, 2, documentId)) &&
             IsOk(db, sqlite3_bind_int64(insertDocumentTermStmt, 3, [[document.terms objectForKey:term] intValue]))) {
 
             sqlite3_step(insertDocumentTermStmt);
-
-            termId = sqlite3_last_insert_rowid(db);
         } else {
             // TODO: Rollback
             return NO;
@@ -144,7 +142,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 - (NSArray *)findDocuments:(NSString *)query
 {
     // Parse query
-    NSArray *queryTerms = [query componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [obj lowercaseString]);
 
     // Build SQL string
 
@@ -159,7 +157,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     [sql appendString:@" WHERE 1"];
     i = 0;
     for (NSString *term in queryTerms) {
-        [sql appendFormat:@" AND t%d.rowid = dt%d.term_id AND dt%d.document_id = documents.rowid", i, i, i];
+        [sql appendFormat:@" AND t%d.term = '%@' AND t%d.rowid = dt%d.term_id AND dt%d.document_id = documents.rowid", i, term, i, i, i];
         i++;
     }
 

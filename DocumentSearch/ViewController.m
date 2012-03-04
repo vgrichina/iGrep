@@ -13,13 +13,13 @@
 
 @synthesize index, filteredListContent, searchWasActive, savedSearchTerm, savedScopeButtonIndex;
 
-
-- (void) startIndexing:(id)ignored {
+- (void)startIndexing:(id)ignored
+{
     NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
     [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
+    NSLog(@"Database path: %@", dbPath);
 
     self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
-    NSLog(@"Database path: %@", dbPath);
 
     NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir"];
     NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
@@ -33,18 +33,18 @@
         if ([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && !isDir) {
             NSLog(@"Indexing file: %@", file);
 
-            @synchronized (self.index) {
+            @autoreleasepool {
                 Document *doc = [[Document alloc] initWithURI:[NSURL fileURLWithPath:file]];
                 if ([self.index addDocument:doc]) {
                     totalIndexed++;
                 } else {
                     NSLog(@"Failed to index");
                 }
-
-                [self performSelectorOnMainThread:@selector(setTitle:)
-                                       withObject:[NSString stringWithFormat:@"%d files indexed", totalIndexed]
-                                    waitUntilDone:NO];
             }
+
+            [self performSelectorOnMainThread:@selector(setTitle:)
+                                   withObject:[NSString stringWithFormat:@"%d files indexed", totalIndexed]
+                                waitUntilDone:NO];
         }
     }
 }
@@ -126,9 +126,7 @@
 {
     NSLog(@"Start filtering: %@", searchText);
 
-    @synchronized(self.index) {
-        self.filteredListContent = [self.index findDocuments:searchText];
-    }
+    self.filteredListContent = [self.index findDocuments:searchText];
 
     NSLog(@"Finish filtering: %@", searchText);
 }
