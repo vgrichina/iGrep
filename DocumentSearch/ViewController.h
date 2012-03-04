@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import <sqlite3.h>
+#import "DocumentsIndex.h"
 
-@interface ViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate> {
-    sqlite3 *db;
-    sqlite3_stmt *stmt;
-}
+@interface ViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
-@property (nonatomic, strong) NSMutableArray *filteredListContent;
+@property (nonatomic, strong) DocumentsIndex *index;
+@property (nonatomic, strong) NSArray *filteredListContent;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
