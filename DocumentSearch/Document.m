@@ -37,12 +37,12 @@
 
     return _content;
 }
-            
+
 - (NSDate *)date
 {
     if (!_date) {
         NSRegularExpression *regex =
-        [NSRegularExpression regularExpressionWithPattern:@"Date: (.+\\d{4})( \\(.*\\))?" 
+        [NSRegularExpression regularExpressionWithPattern:@"Date: (.+\\d{4})( \\(.*\\))?"
                                                   options:NSRegularExpressionCaseInsensitive
                                                     error:NULL];
         NSTextCheckingResult *match = [regex firstMatchInString:self.content options:0 range:NSMakeRange(0, self.content.length)];
@@ -52,7 +52,7 @@
             NSDateFormatter *dateFormatter = [NSDateFormatter new];
             dateFormatter.dateFormat = @"EEE, dd MMM yyyy hh:mm:ss ZZZ";
             dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-            
+
             _date = [dateFormatter dateFromString:[self.content substringWithRange:range]];
         } else {
             NSLog(@"Warning, no Date header found for URL: %@", self.uri);
