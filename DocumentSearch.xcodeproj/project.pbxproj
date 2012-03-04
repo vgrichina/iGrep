@@ -13,6 +13,8 @@
 		D50BA5011503CA42003D88DC /* DocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */; };
 		D50BA5041503CA70003D88DC /* DocumentsIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */; };
 		D50BA5051503CB48003D88DC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED18071501671700D78E99 /* libsqlite3.dylib */; };
+		D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA50B15042633003D88DC /* DocumentViewController.m */; };
+		D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50BA50C15042634003D88DC /* DocumentViewController.xib */; };
 		D56308221503ACE000F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
 		D56308241503B52100F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
 		D56308421503B56700F3187F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D563082B1503B54100F3187F /* SenTestingKit.framework */; };
@@ -40,6 +42,9 @@
 		D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentsIndex.m; sourceTree = "<group>"; };
 		D50BA5021503CA70003D88DC /* DocumentsIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentsIndexTests.h; sourceTree = "<group>"; };
 		D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentsIndexTests.m; sourceTree = "<group>"; };
+		D50BA50A15042633003D88DC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
+		D50BA50B15042633003D88DC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
+		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentViewController.xib; sourceTree = "<group>"; };
 		D56308201503ACE000F3187F /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		D56308211503ACE000F3187F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		D56308231503B52100F3187F /* maildir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maildir; sourceTree = SOURCE_ROOT; };
@@ -167,6 +172,9 @@
 				D5ED17EF15013C1400D78E99 /* ViewController.h */,
 				D5ED17F015013C1400D78E99 /* ViewController.m */,
 				D5ED17F215013C1400D78E99 /* ViewController.xib */,
+				D50BA50A15042633003D88DC /* DocumentViewController.h */,
+				D50BA50B15042633003D88DC /* DocumentViewController.m */,
+				D50BA50C15042634003D88DC /* DocumentViewController.xib */,
 				D5ED17E415013C1400D78E99 /* Supporting Files */,
 			);
 			path = DocumentSearch;
@@ -265,6 +273,7 @@
 				D5ED17E815013C1400D78E99 /* InfoPlist.strings in Resources */,
 				D5ED17F415013C1400D78E99 /* ViewController.xib in Resources */,
 				D56308241503B52100F3187F /* maildir in Resources */,
+				D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +318,7 @@
 				D56308221503ACE000F3187F /* Document.m in Sources */,
 				D50BA4FC1503C630003D88DC /* MACollectionUtilities.m in Sources */,
 				D50BA5001503CA42003D88DC /* DocumentsIndex.m in Sources */,
+				D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

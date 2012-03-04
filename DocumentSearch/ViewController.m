@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 
-
 @implementation ViewController
 
 @synthesize index, filteredListContent, searchWasActive, savedSearchTerm, savedScopeButtonIndex;
+@synthesize documentViewController;
 
 - (void)startIndexing:(id)ignored
 {
@@ -86,6 +86,14 @@
 }
 
 #pragma mark -
+#pragma mark Other methods
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
+
+#pragma mark -
 #pragma mark UITableView data source and delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -119,6 +127,13 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Document *document = [self.filteredListContent objectAtIndex:indexPath.row];
+    self.documentViewController.document = document;
+    [self.navigationController pushViewController:self.documentViewController animated:YES];
+}
+
 #pragma mark -
 #pragma mark Content Filtering
 
@@ -126,7 +141,7 @@
 {
     NSLog(@"Start filtering: %@", searchText);
 
-    self.filteredListContent = [self.index findDocuments:searchText];
+    self.filteredListContent = [self.index searchDocuments:searchText];
 
     NSLog(@"Finish filtering: %@", searchText);
 }
