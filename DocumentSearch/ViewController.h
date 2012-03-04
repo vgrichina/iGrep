@@ -13,6 +13,7 @@
 @interface ViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) DocumentsIndex *index;
+
 @property (nonatomic, strong) NSArray *filteredListContent;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;

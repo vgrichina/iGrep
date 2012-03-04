@@ -10,12 +10,16 @@
 
 #import "ViewController.h"
 
+#import <sqlite3.h>
+
 @implementation AppDelegate
 
 @synthesize window, viewController, navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    sqlite3_config(SQLITE_CONFIG_SERIALIZED);
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 
