@@ -173,7 +173,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     return YES;
 }
 
-- (NSArray *)searchDocuments:(NSString *)query
+- (NSArray *)searchDocuments:(NSString *)query order:(DocumentsIndexSearchOrder)order
 {
     // Parse query
     NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [obj lowercaseString]);
@@ -200,7 +200,17 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         i++;
     }
 
-    [sql appendFormat:@" ORDER BY DATE DESC"];
+    if (order == DocumentsIndexSearchOrderDate) {
+        [sql appendFormat:@" ORDER BY DATE DESC"];
+    } else {
+        [sql appendFormat:@" ORDER BY "];
+        __block int i = 0;
+        NSArray *parts = MAP(queryTerms,
+                             [NSString stringWithFormat:
+                              @"(dt%d.occurences * t%d.num_documents / (SELECT COUNT(*) FROM documents))", i, i++]);
+        [sql appendString:[parts componentsJoinedByString:@" + "]];
+        [sql appendFormat:@" DESC"];
+    }
 
     [sql appendString:@" LIMIT 30"];
 

@@ -12,6 +12,11 @@
 
 #import "Document.h"
 
+typedef enum {
+    DocumentsIndexSearchOrderDate = 0,
+    DocumentsIndexSearchOrderTfIdf
+} DocumentsIndexSearchOrder;
+
 @interface DocumentsIndex : NSObject {
     sqlite3 *db;
     sqlite3_stmt *selectTermStmt;
@@ -23,6 +28,6 @@
 - (id)initWithDatabase:(NSString *)database;
 - (BOOL)addDocument:(Document *)document;
 
-- (NSArray *)searchDocuments:(NSString *)query;
+- (NSArray *)searchDocuments:(NSString *)query order:(DocumentsIndexSearchOrder)order;
 
 @end
