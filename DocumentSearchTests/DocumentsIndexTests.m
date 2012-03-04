@@ -15,6 +15,7 @@
 - (void)setUp
 {
     NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
+    [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
     self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
     NSLog(@"Database path: %@", dbPath);
 }
@@ -32,7 +33,7 @@
 {
     [self testAddDocument];
 
-    STAssertEquals([self.index findDocuments:@"wow"].count, 1u, @"Single document found");
+    STAssertEquals([self.index searchDocuments:@"wow"].count, 1u, @"Single document found");
 }
 
 @end

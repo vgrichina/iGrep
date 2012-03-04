@@ -23,6 +23,6 @@
 - (id)initWithDatabase:(NSString *)database;
 - (BOOL)addDocument:(Document *)document;
 
-- (NSArray *)findDocuments:(NSString *)query;
+- (NSArray *)searchDocuments:(NSString *)query;
 
 @end

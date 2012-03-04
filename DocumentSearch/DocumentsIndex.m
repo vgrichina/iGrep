@@ -171,7 +171,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     return YES;
 }
 
-- (NSArray *)findDocuments:(NSString *)query
+- (NSArray *)searchDocuments:(NSString *)query
 {
     // Parse query
     NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [obj lowercaseString]);
