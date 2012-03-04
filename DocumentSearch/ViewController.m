@@ -31,14 +31,14 @@
 
         BOOL isDir;
         if ([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && !isDir) {
-            NSLog(@"Indexing file: %@", file);
+            //NSLog(@"Indexing file: %@", file);
 
             @autoreleasepool {
                 Document *doc = [[Document alloc] initWithURI:[NSURL fileURLWithPath:file]];
                 if ([self.index addDocument:doc]) {
                     totalIndexed++;
                 } else {
-                    NSLog(@"Failed to index");
+                    NSLog(@"Failed to index: %@", file);
                 }
             }
 

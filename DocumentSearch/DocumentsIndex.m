@@ -56,18 +56,28 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         }
 
         if (!Exec(db,
-            @"CREATE TABLE IF NOT EXISTS terms (term TEXT PRIMARY KEY, num_documents INTEGER); \
-              CREATE TABLE IF NOT EXISTS documents (uri TEXT PRIMARY KEY); \
+            @"CREATE TABLE IF NOT EXISTS terms (term TEXT, num_documents INTEGER); \
+              CREATE TABLE IF NOT EXISTS documents (uri TEXT); \
               CREATE TABLE IF NOT EXISTS documents_terms (term_id INTEGER, document_id INTEGER, occurences INTEGER); \
               CREATE INDEX IF NOT EXISTS term_idx ON terms (term); \
+              CREATE INDEX IF NOT EXISTS document_idx ON documents (uri); \
               CREATE INDEX IF NOT EXISTS documents_terms_idx ON documents_terms (term_id, document_id); \
             ", nop)) {
             return nil;
         }
 
-        if (!IsOk(db, sqlite3_prepare_v2(db, "INSERT OR REPLACE INTO terms (term, num_documents) \
-                                                VALUES(?, COALESCE((SELECT num_documents + 1 FROM terms WHERE term = ?), 1))", -1,
+        if (!IsOk(db, sqlite3_prepare_v2(db, "SELECT rowid FROM terms WHERE term = ?", -1,
+                                         &selectTermStmt, NULL))) {
+            return nil;
+        }
+
+        if (!IsOk(db, sqlite3_prepare_v2(db, "UPDATE terms SET num_documents = num_documents + 1 WHERE term = ?", -1,
                                          &updateTermStmt, NULL))) {
+            return nil;
+        }
+
+        if (!IsOk(db, sqlite3_prepare_v2(db, "INSERT INTO terms (term, num_documents) VALUES(?, 1)", -1,
+                                         &insertTermStmt, NULL))) {
             return nil;
         }
 
@@ -109,18 +119,40 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     sqlite3_int64 documentId = sqlite3_last_insert_rowid(db);
 
     for (NSString *term in document.terms.allKeys) {
-        // Update or insert term
-        sqlite3_int64 termId;
-        if (IsOk(db, sqlite3_reset(updateTermStmt)) && IsOk(db, sqlite3_clear_bindings(updateTermStmt)) &&
-            IsOk(db, sqlite3_bind_text(updateTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT)) &&
-            IsOk(db, sqlite3_bind_text(updateTermStmt, 2, term.UTF8String, -1, SQLITE_TRANSIENT))) {
+        sqlite3_int64 termId = -1;
 
-            // TODO: Check error
-            sqlite3_step(updateTermStmt);
-            termId = sqlite3_last_insert_rowid(db);
+        // TODO: Check why incorrect rowid returned by INSERT OR REPLACE
+        // Get term id
+        if (IsOk(db, sqlite3_reset(selectTermStmt)) && IsOk(db, sqlite3_clear_bindings(selectTermStmt)) &&
+            IsOk(db, sqlite3_bind_text(selectTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT))) {
+            if (sqlite3_step(selectTermStmt) == SQLITE_ROW) {
+                termId = sqlite3_column_int64(selectTermStmt, 0);
+            }
+        }
+
+        if (termId > 0) {
+            // Update term
+            if (IsOk(db, sqlite3_reset(updateTermStmt)) && IsOk(db, sqlite3_clear_bindings(updateTermStmt)) &&
+                IsOk(db, sqlite3_bind_text(updateTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT))) {
+
+                // TODO: Check error
+                sqlite3_step(updateTermStmt);
+            } else {
+                // TODO: Rollback?
+                return NO;
+            }
         } else {
-            // TODO: Rollback
-            return NO;
+            // Insert term
+            if (IsOk(db, sqlite3_reset(insertTermStmt)) && IsOk(db, sqlite3_clear_bindings(insertTermStmt)) &&
+                IsOk(db, sqlite3_bind_text(insertTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT))) {
+
+                // TODO: Check error
+                sqlite3_step(insertTermStmt);
+                termId = sqlite3_last_insert_rowid(db);
+            } else {
+                // TODO: Rollback?
+                return NO;
+            }
         }
 
         // Insert relation between document and term
