@@ -33,7 +33,7 @@
     STAssertEquals(self.document.tokens.count, 82u, @"Has expected number of tokens");
 }
 
-- (void)testTerms 
+- (void)testTerms
 {
     NSLog(@"terms: %@", self.document.terms);
     STAssertEquals(self.document.terms.count, 63u, @"Has expected number of terms");
