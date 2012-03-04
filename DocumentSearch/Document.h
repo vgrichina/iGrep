@@ -15,6 +15,7 @@
     NSDate *_date;
     NSArray *_tokens;
     NSDictionary *_terms;
+    NSString *_title;
 }
 
 @property(readonly) NSURL *uri;
@@ -23,6 +24,7 @@
 @property(readonly) NSDate *date;
 @property(readonly) NSArray *tokens;
 @property(readonly) NSDictionary *terms;
+@property(readonly) NSString *title;
 
 - (id)initWithURI:(NSURL *)uri;
 

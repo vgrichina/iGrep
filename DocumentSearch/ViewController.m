@@ -16,6 +16,8 @@
 
 - (void) startIndexing:(id)ignored {
     NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
+    [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
+
     self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
     NSLog(@"Database path: %@", dbPath);
 
@@ -101,7 +103,7 @@
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellID];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellID];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellID];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 
@@ -110,7 +112,9 @@
         document = [self.filteredListContent objectAtIndex:indexPath.row];
     }
 
-	cell.textLabel.text = [document.uri relativeString];
+    cell.textLabel.text = document.title;
+	cell.detailTextLabel.text = [document.uri path];
+
 
 	return cell;
 }

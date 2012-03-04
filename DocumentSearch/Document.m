@@ -93,4 +93,24 @@
     return _terms;
 }
 
+- (NSString *)title
+{
+    if (!_title) {
+        NSRegularExpression *regex =
+        [NSRegularExpression regularExpressionWithPattern:@"Subject: (.+)"
+                                                  options:NSRegularExpressionCaseInsensitive
+                                                    error:NULL];
+        NSTextCheckingResult *match = [regex firstMatchInString:self.content options:0 range:NSMakeRange(0, self.content.length)];
+        if (match && match.range.location != NSNotFound) {
+            NSRange range = [match rangeAtIndex:1];
+
+            _title = [self.content substringWithRange:range];
+        } else {
+            NSLog(@"Warning, no Subject header found for URL: %@", self.uri);
+        }
+    }
+
+    return _title;
+}
+
 @end
