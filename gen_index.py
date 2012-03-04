@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-db_path = "Autocomplete/names.sqlite"
+db_path = "DocumentSearch/names.sqlite"
 os.remove(db_path)
 
 db = sqlite3.connect(db_path)
@@ -23,7 +23,7 @@ c = db.cursor()
 
 all_parts = {}
 
-for name in open("Autocomplete/fake-full-names.txt", "r"):
+for name in open("DocumentSearch/fake-full-names.txt", "r"):
     name = name.replace("\n", "")
 
     c.execute("insert into names values (?)", (name,))
