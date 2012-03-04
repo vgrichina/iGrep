@@ -121,8 +121,7 @@
     }
 
     cell.textLabel.text = document.title;
-	cell.detailTextLabel.text = [document.uri path];
-
+	cell.detailTextLabel.text = [document.date description];
 
 	return cell;
 }
