@@ -1,0 +1,3 @@
+[submodule "MACollectionUtilities"]
+	path = MACollectionUtilities
+	url = git://github.com/mikeash/MACollectionUtilities.git

@@ -2,3 +2,4 @@
 xcuserdata
 *.swp
 *.sqlite
+maildir/
