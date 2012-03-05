@@ -181,8 +181,22 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     // Build SQL string
 
     NSMutableString *sql = [NSMutableString string];
-    [sql appendString:@"SELECT DISTINCT uri FROM documents"];
+    [sql appendString:@"SELECT DISTINCT uri FROM"];
+
+    [sql appendString:@"(SELECT uri"];
     int i = 0;
+
+    if (order == DocumentsIndexSearchOrderTfIdf) {
+        for (NSString *term in queryTerms) {
+            [sql appendFormat:@", t%d.num_documents as t%dnd, dt%d.occurences as dt%do", i, i, i, i];
+            i++;
+        }
+    } else {
+        [sql appendString: @", date"];
+    }
+
+    [sql appendString:@" FROM documents"];
+    i = 0;
     for (NSString *term in queryTerms) {
         [sql appendFormat:@", terms as t%d, documents_terms as dt%d", i, i];
         i++;
@@ -200,6 +214,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         i++;
     }
 
+    [sql appendFormat:@" LIMIT 1000)"];
+
     if (order == DocumentsIndexSearchOrderDate) {
         [sql appendFormat:@" ORDER BY DATE DESC"];
     } else {
@@ -207,7 +223,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
         __block int i = 0;
         NSArray *parts = MAP(queryTerms,
                              [NSString stringWithFormat:
-                              @"(dt%d.occurences * t%d.num_documents / (SELECT COUNT(*) FROM documents))", i, i++]);
+                              @"(dt%do * t%dnd / (SELECT COUNT(*) FROM documents))", i, i++]);
         [sql appendString:[parts componentsJoinedByString:@" + "]];
         [sql appendFormat:@" DESC"];
     }
