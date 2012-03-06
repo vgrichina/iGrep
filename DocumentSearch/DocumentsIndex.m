@@ -102,6 +102,11 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 
 - (BOOL)addDocument:(Document *)document
 {
+    // Start transaction
+    if (!Exec(db, @"BEGIN", nop)) {
+        return NO;
+    }
+
     // Check if document is present
     __block BOOL found = NO;
     if (!Exec(db, [NSString stringWithFormat: @"SELECT COUNT(*) FROM documents WHERE uri = '%@'", document.uri],
@@ -172,6 +177,11 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
             // TODO: Rollback
             return NO;
         }
+    }
+
+    // Commit transaction
+    if (!Exec(db, @"COMMIT", nop)) {
+        return NO;
     }
 
     return YES;

@@ -42,7 +42,7 @@
     puts("\n\n");
     NSLog(@"Running testAddDocumentStress");
 
-    NSString *mailPath = [[[NSBundle bundleForClass:[DocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir"];
+    NSString *mailPath = [[[NSBundle bundleForClass:[DocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/"];
     NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
 
     int totalIndexed = 0;
@@ -65,7 +65,7 @@
     puts("\n");
     int timePassed = (int)-[start timeIntervalSinceNow];
     NSLog(@"Indexed %d files in %d seconds", totalIndexed, timePassed);
-    NSLog(@"Indexing single document takes: %.2f seconds", (float) timePassed / totalIndexed);
+    NSLog(@"Indexing single document takes: %.3f seconds", (float) timePassed / totalIndexed);
     puts("\n\n");
 }
 
