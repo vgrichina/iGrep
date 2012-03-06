@@ -199,10 +199,33 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     return YES;
 }
 
+- (NSArray *)termCompletions:(NSString *)termStart {
+    NSString *sql = [NSString stringWithFormat:@"SELECT term FROM terms WHERE term LIKE'%@%%' ORDER BY num_documents DESC LIMIT 5", termStart];
+
+    NSMutableArray *terms = [NSMutableArray array];
+    if (Exec(db, sql, ^int(int numColums, char **columnValues, char **columnNames) {
+        [terms addObject:
+         [NSString stringWithUTF8String:columnValues[0]]];
+        return 0;
+    })) {
+        return terms;
+    } else {
+        return nil;
+    }
+}
+
 - (NSArray *)searchDocuments:(NSString *)query order:(DocumentsIndexSearchOrder)order
 {
     // Parse query
-    NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [obj lowercaseString]);
+    NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:
+                               [[NSCharacterSet letterCharacterSet] invertedSet]], [obj lowercaseString]);
+    queryTerms = SELECT(queryTerms, [obj length] > 0);
+    if (queryTerms.count == 0) {
+        return [NSArray array];
+    }
+
+    // Search best completions for last term
+    NSArray *lastTerms = [self termCompletions:[queryTerms lastObject]];
 
     // Build SQL string
 
@@ -232,7 +255,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     i = 0;
     for (NSString *term in queryTerms) {
         if (i == queryTerms.count - 1) {
-            [sql appendFormat:@" AND t%d.term LIKE '%@%%'", i, term];
+            [sql appendFormat:@" AND t%d.term IN (%@)", i,
+             [MAP(lastTerms, [NSString stringWithFormat:@"'%@'", obj]) componentsJoinedByString:@", "]];
         } else {
             [sql appendFormat:@" AND t%d.term = '%@'", i, term];
         }
