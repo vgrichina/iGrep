@@ -149,8 +149,6 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
                     termId = sqlite3_column_int64(selectTermStmt, 0);
                 }
             }
-
-            [termsCache setObject:[NSNumber numberWithInt:termId] forKey:term];
         }
 
         if (termId > 0) {
@@ -177,6 +175,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
                 return NO;
             }
         }
+        [termsCache setObject:[NSNumber numberWithInt:termId] forKey:term];
+
 
         // Insert relation between document and term
         if (IsOk(db, sqlite3_reset(insertDocumentTermStmt)) && IsOk(db, sqlite3_clear_bindings(insertDocumentTermStmt)) &&
