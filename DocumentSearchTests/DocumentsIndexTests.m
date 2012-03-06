@@ -36,12 +36,13 @@
     STAssertEquals([self.index searchDocuments:@"wow" order:DocumentsIndexSearchOrderDate].count, 1u, @"Single document found");
 }
 
-- (void)testAddDocumentStress
+- (void)testPerformance
 {
     NSDate *start = [NSDate date];
     puts("\n\n");
-    NSLog(@"Running testAddDocumentStress");
+    NSLog(@"Running testPerformance");
 
+    // Index documents
     NSString *mailPath = [[[NSBundle bundleForClass:[DocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/"];
     NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
 
@@ -67,6 +68,23 @@
     NSLog(@"Indexed %d files in %d seconds", totalIndexed, timePassed);
     NSLog(@"Indexing single document takes: %.3f seconds", (float) timePassed / totalIndexed);
     puts("\n\n");
+
+    // Try some searches too
+    NSArray *queries = [NSArray arrayWithObjects:@"monday", @"gonzales", @"appointment", @"meeting", @"eric meeting", nil];
+
+    // tf*idf
+    for (NSString *query in queries) {
+        NSLog(@"Searching: %@", query);
+        NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderTfIdf];
+        STAssertTrue(documents.count > 0, @"Should find some documents");
+    }
+
+    // Time sort
+    for (NSString *query in queries) {
+        NSLog(@"Searching: %@", query);
+        NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderDate];
+        STAssertTrue(documents.count > 0, @"Should find some documents");
+    }
 }
 
 @end
