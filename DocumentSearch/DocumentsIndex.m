@@ -90,6 +90,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
                                          &insertDocumentTermStmt, NULL))) {
             return nil;
         }
+
+        termsCache = [NSMutableDictionary dictionary];
     }
 
     return self;
@@ -132,13 +134,20 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     for (NSString *term in document.terms.allKeys) {
         sqlite3_int64 termId = -1;
 
-        // TODO: Check why incorrect rowid returned by INSERT OR REPLACE
-        // Get term id
-        if (IsOk(db, sqlite3_reset(selectTermStmt)) && IsOk(db, sqlite3_clear_bindings(selectTermStmt)) &&
-            IsOk(db, sqlite3_bind_text(selectTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT))) {
-            if (sqlite3_step(selectTermStmt) == SQLITE_ROW) {
-                termId = sqlite3_column_int64(selectTermStmt, 0);
+        if ([termsCache objectForKey:term]) {
+            termId = [[termsCache objectForKey:term] intValue];
+        } else {
+
+            // TODO: Check why incorrect rowid returned by INSERT OR REPLACE
+            // Get term id
+            if (IsOk(db, sqlite3_reset(selectTermStmt)) && IsOk(db, sqlite3_clear_bindings(selectTermStmt)) &&
+                IsOk(db, sqlite3_bind_text(selectTermStmt, 1, term.UTF8String, -1, SQLITE_TRANSIENT))) {
+                if (sqlite3_step(selectTermStmt) == SQLITE_ROW) {
+                    termId = sqlite3_column_int64(selectTermStmt, 0);
+                }
             }
+
+            [termsCache setObject:[NSNumber numberWithInt:termId] forKey:term];
         }
 
         if (termId > 0) {
