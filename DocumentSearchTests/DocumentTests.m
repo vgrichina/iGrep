@@ -8,12 +8,16 @@
 
 #import "DocumentTests.h"
 
+#import <sqlite3.h>
+
 @implementation DocumentTests
 
 @synthesize document;
 
 - (void)setUp
 {
+    sqlite3_config(SQLITE_CONFIG_SERIALIZED);
+
     NSURL *url = [[[NSBundle bundleForClass:[Document class]] bundleURL] URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."];
     self.document = [[Document alloc] initWithURI:url];
 }
