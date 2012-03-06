@@ -55,6 +55,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
             return nil;
         }
 
+        // Disable fsync to improve performance
         if (!Exec(db, @"PRAGMA synchronous=off", nop)) {
             return nil;
         }
