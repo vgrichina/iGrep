@@ -67,7 +67,8 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
               CREATE INDEX IF NOT EXISTS term_idx ON terms (term); \
               CREATE INDEX IF NOT EXISTS document_uri_idx ON documents (uri); \
               CREATE INDEX IF NOT EXISTS document_date_idx ON documents (date); \
-              CREATE INDEX IF NOT EXISTS documents_terms_idx ON documents_terms (term_id, document_id); \
+              CREATE INDEX IF NOT EXISTS documents_terms_idx_term ON documents_terms (term_id); \
+              CREATE INDEX IF NOT EXISTS documents_terms_idx_document ON documents_terms (document_id); \
             ", nop)) {
             return nil;
         }
