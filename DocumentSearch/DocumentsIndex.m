@@ -129,6 +129,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     // Insert document
     if (!Exec(db, [NSString stringWithFormat: @"INSERT INTO documents (uri, date) VALUES ('%@', %ld)",
                    document.uri, (long long)[document.date timeIntervalSince1970]], nop)) {
+        Exec(db, @"ROLLBACK", nop);
         return NO;
     }
     sqlite3_int64 documentId = sqlite3_last_insert_rowid(db);
@@ -160,7 +161,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
                 // TODO: Check error
                 sqlite3_step(updateTermStmt);
             } else {
-                // TODO: Rollback?
+                Exec(db, @"ROLLBACK", nop);
                 return NO;
             }
         } else {
@@ -172,7 +173,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
                 sqlite3_step(insertTermStmt);
                 termId = sqlite3_last_insert_rowid(db);
             } else {
-                // TODO: Rollback?
+                Exec(db, @"ROLLBACK", nop);
                 return NO;
             }
         }
@@ -185,7 +186,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 
             sqlite3_step(insertDocumentTermStmt);
         } else {
-            // TODO: Rollback
+            Exec(db, @"ROLLBACK", nop);
             return NO;
         }
     }

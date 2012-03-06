@@ -47,6 +47,11 @@
                                 waitUntilDone:NO];
         }
     }
+
+    [self performSelectorOnMainThread:@selector(setTitle:)
+                           withObject:[NSString stringWithFormat:@"Indexing complete", totalIndexed]
+                        waitUntilDone:NO];
+
 }
 
 #pragma mark -

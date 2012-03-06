@@ -14,7 +14,8 @@
 
 - (void)setUp
 {
-    NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
+    //NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
+    NSString *dbPath = @"/Users/vg/tmp/index.sqlite";
     [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
     self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
     NSLog(@"Database path: %@", dbPath);
