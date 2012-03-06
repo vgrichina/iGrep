@@ -33,7 +33,40 @@
 {
     [self testAddDocument];
 
-    STAssertEquals([self.index searchDocuments:@"wow"].count, 1u, @"Single document found");
+    STAssertEquals([self.index searchDocuments:@"wow" order:DocumentsIndexSearchOrderDate].count, 1u, @"Single document found");
+}
+
+- (void)testAddDocumentStress
+{
+    NSDate *start = [NSDate date];
+    puts("\n\n");
+    NSLog(@"Running testAddDocumentStress");
+
+    NSString *mailPath = [[[NSBundle bundleForClass:[DocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir"];
+    NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
+
+    int totalIndexed = 0;
+    NSString *file;
+    while (file = [filesEnumerator nextObject]) {
+        file = [mailPath stringByAppendingPathComponent:file];
+
+        BOOL isDir;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && !isDir) {
+            putc('.', stdout);
+            totalIndexed++;
+
+            @autoreleasepool {
+                Document *doc = [[Document alloc] initWithURI:[NSURL fileURLWithPath:file]];
+                STAssertTrue([self.index addDocument:doc], @"Indexed successfully");
+            }
+        }
+    }
+
+    puts("\n");
+    int timePassed = (int)-[start timeIntervalSinceNow];
+    NSLog(@"Indexed %d files in %d seconds", totalIndexed, timePassed);
+    NSLog(@"Indexing single document takes: %.2f seconds", (float) timePassed / totalIndexed);
+    puts("\n\n");
 }
 
 @end
