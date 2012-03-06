@@ -55,6 +55,10 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
             return nil;
         }
 
+        if (!Exec(db, @"PRAGMA synchronous=off", nop)) {
+            return nil;
+        }
+
         if (!Exec(db,
             @"CREATE TABLE IF NOT EXISTS terms (term TEXT COLLATE NOCASE, num_documents INTEGER); \
               CREATE TABLE IF NOT EXISTS documents (uri TEXT, date INTEGER); \
