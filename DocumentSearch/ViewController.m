@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "RawFileIndex.h"
+
 @implementation ViewController
 
 @synthesize index, filteredListContent, searchWasActive, savedSearchTerm, savedScopeButtonIndex;
@@ -15,11 +17,11 @@
 
 - (void)startIndexing:(id)ignored
 {
-    NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
-    [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
-    NSLog(@"Database path: %@", dbPath);
+    NSString *indexPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.bin"];
+    [[NSFileManager defaultManager] removeItemAtPath:indexPath error:NULL];
+    NSLog(@"Index path: %@", indexPath);
 
-    self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
+    self.index = [[RawFileIndex alloc] initWithFile:indexPath];
 
     NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir"];
     NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
