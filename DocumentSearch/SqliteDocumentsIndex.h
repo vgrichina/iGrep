@@ -18,7 +18,7 @@
     sqlite3_stmt *insertTermStmt;
     sqlite3_stmt *updateTermStmt;
     sqlite3_stmt *insertDocumentTermStmt;
-    
+
     NSMutableDictionary *termsCache;
 }
 
