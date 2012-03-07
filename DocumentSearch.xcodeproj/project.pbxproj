@@ -24,6 +24,9 @@
 		D56308541503B58100F3187F /* DocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308531503B58100F3187F /* DocumentTests.m */; };
 		D56308551503B86500F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
 		D56308561503B87300F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
+		D5B73C5015080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
+		D5B73C5115080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
+		D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */; };
 		D5ED17DE15013C1400D78E99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DD15013C1400D78E99 /* UIKit.framework */; };
 		D5ED17E015013C1400D78E99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
 		D5ED17E215013C1400D78E99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17E115013C1400D78E99 /* CoreGraphics.framework */; };
@@ -55,6 +58,10 @@
 		D563084E1503B56700F3187F /* DocumentSearchTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocumentSearchTests-Prefix.pch"; sourceTree = "<group>"; };
 		D56308521503B58100F3187F /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTests.h; sourceTree = "<group>"; };
 		D56308531503B58100F3187F /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTests.m; sourceTree = "<group>"; };
+		D5B73C4E15080FE800E34F33 /* SqliteDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteDocumentsIndex.h; sourceTree = "<group>"; };
+		D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteDocumentsIndex.m; sourceTree = "<group>"; };
+		D5B73C53150814AE00E34F33 /* SqliteIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteIndexTests.h; sourceTree = "<group>"; };
+		D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteIndexTests.m; sourceTree = "<group>"; };
 		D5ED17D915013C1400D78E99 /* DocumentSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5ED17DD15013C1400D78E99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D5ED17DF15013C1400D78E99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,6 +121,8 @@
 				D56308531503B58100F3187F /* DocumentTests.m */,
 				D50BA5021503CA70003D88DC /* DocumentsIndexTests.h */,
 				D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */,
+				D5B73C53150814AE00E34F33 /* SqliteIndexTests.h */,
+				D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */,
 			);
 			path = DocumentSearchTests;
 			sourceTree = "<group>";
@@ -167,6 +176,8 @@
 				D56308211503ACE000F3187F /* Document.m */,
 				D50BA4FE1503CA42003D88DC /* DocumentsIndex.h */,
 				D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */,
+				D5B73C4E15080FE800E34F33 /* SqliteDocumentsIndex.h */,
+				D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */,
 				D5ED17EC15013C1400D78E99 /* AppDelegate.h */,
 				D5ED17ED15013C1400D78E99 /* AppDelegate.m */,
 				D5ED17EF15013C1400D78E99 /* ViewController.h */,
@@ -305,6 +316,8 @@
 				D56308541503B58100F3187F /* DocumentTests.m in Sources */,
 				D50BA5011503CA42003D88DC /* DocumentsIndex.m in Sources */,
 				D50BA5041503CA70003D88DC /* DocumentsIndexTests.m in Sources */,
+				D5B73C5115080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */,
+				D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +332,7 @@
 				D50BA4FC1503C630003D88DC /* MACollectionUtilities.m in Sources */,
 				D50BA5001503CA42003D88DC /* DocumentsIndex.m in Sources */,
 				D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */,
+				D5B73C5015080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

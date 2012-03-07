@@ -14,4 +14,9 @@
 
 @property(strong) DocumentsIndex *index;
 
+- (void)doTestAddDocument;
+- (void)doTestSearchDocuments;
+- (void)doTestPerformance;
+
+
 @end

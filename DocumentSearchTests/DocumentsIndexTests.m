@@ -12,16 +12,7 @@
 
 @synthesize index;
 
-- (void)setUp
-{
-    NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
-    //NSString *dbPath = @"/Users/vg/tmp/index.sqlite";
-    [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
-    self.index = [[DocumentsIndex alloc] initWithDatabase:dbPath];
-    NSLog(@"Database path: %@", dbPath);
-}
-
-- (void)testAddDocument
+- (void)doTestAddDocument
 {
     NSURL *url = [[[NSBundle bundleForClass:[Document class]] bundleURL] URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."];
     Document *document = [[Document alloc] initWithURI:url];
@@ -30,14 +21,14 @@
     STAssertFalse([self.index addDocument:document], @"Document added");
 }
 
-- (void)testFindDocuments
+- (void)doTestSearchDocuments
 {
-    [self testAddDocument];
+    [self doTestAddDocument];
 
     STAssertEquals([self.index searchDocuments:@"wow" order:DocumentsIndexSearchOrderDate].count, 1u, @"Single document found");
 }
 
-- (void)testPerformance
+- (void)doTestPerformance
 {
     NSDate *start = [NSDate date];
     puts("\n\n");
