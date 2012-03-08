@@ -11,12 +11,11 @@
 @interface RawFileIndex : DocumentsIndex {
     int fd;
     void *data;
-    int writePosition;
+    void *writePosition;
     int fileSize;
-    
+
     NSMutableOrderedSet *documents;
     NSMutableDictionary *termsCache;
-    int documentsInCache;
 }
 
 - (id)initWithFile:(NSString *)file;

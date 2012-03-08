@@ -68,14 +68,14 @@
     for (NSString *query in queries) {
         NSLog(@"Searching: %@", query);
         NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderTfIdf];
-        STAssertTrue(documents.count > 0, @"Should find some documents");
+        STAssertTrue(documents.count > 0, @"Should find some documents for query: %@", query);
     }
 
     // Time sort
     for (NSString *query in queries) {
         NSLog(@"Searching: %@", query);
         NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderDate];
-        STAssertTrue(documents.count > 0, @"Should find some documents");
+        STAssertTrue(documents.count > 0, @"Should find some documents for query: %@", query);
     }
 }
 
