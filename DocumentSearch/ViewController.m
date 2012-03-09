@@ -36,7 +36,7 @@
             //NSLog(@"Indexing file: %@", file);
 
             @autoreleasepool {
-                Document *doc = [[Document alloc] initWithURI:[NSURL fileURLWithPath:file]];
+                Document *doc = [[Document alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
                 if ([self.index addDocument:doc]) {
                     totalIndexed++;
                 } else {
