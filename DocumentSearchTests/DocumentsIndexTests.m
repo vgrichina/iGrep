@@ -14,7 +14,8 @@
 
 - (void)doTestAddDocument
 {
-    NSURL *url = [[[NSBundle bundleForClass:[Document class]] bundleURL] URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."];
+    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+                      URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
     Document *document = [[Document alloc] initWithURI:url];
 
     STAssertTrue([self.index addDocument:document], @"Document added");
@@ -49,7 +50,7 @@
             totalIndexed++;
 
             @autoreleasepool {
-                Document *doc = [[Document alloc] initWithURI:[NSURL fileURLWithPath:file]];
+                Document *doc = [[Document alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
                 STAssertTrue([self.index addDocument:doc], @"Indexed successfully");
             }
         }

@@ -18,7 +18,8 @@
 {
     sqlite3_config(SQLITE_CONFIG_SERIALIZED);
 
-    NSURL *url = [[[NSBundle bundleForClass:[Document class]] bundleURL] URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."];
+    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+                      URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
     self.document = [[Document alloc] initWithURI:url];
 }
 

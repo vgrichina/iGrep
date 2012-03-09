@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Document : NSObject {
-    NSURL *_uri;
+    NSString *_uri;
 
     NSString *_content;
     NSDate *_date;
@@ -18,7 +18,7 @@
     NSString *_title;
 }
 
-@property(readonly) NSURL *uri;
+@property(readonly) NSString *uri;
 
 @property(readonly) NSString *content;
 @property(readonly) NSDate *date;
@@ -26,6 +26,6 @@
 @property(readonly) NSDictionary *terms;
 @property(readonly) NSString *title;
 
-- (id)initWithURI:(NSURL *)uri;
+- (id)initWithURI:(NSString *)uri;
 
 @end

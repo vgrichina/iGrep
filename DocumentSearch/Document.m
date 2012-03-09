@@ -14,7 +14,7 @@
 
 @synthesize uri = _uri;
 
-- (id)initWithURI:(NSURL *)uri
+- (id)initWithURI:(NSString *)uri
 {
     if ((self = [super init])) {
         _uri = uri;
@@ -27,7 +27,7 @@
 {
     if (!_content) {
         NSError *error = nil;
-        _content = [NSString stringWithContentsOfURL:self.uri
+        _content = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.uri]
                                             encoding:NSUTF8StringEncoding
                                                error:&error];
         if (error) {

@@ -12,6 +12,12 @@
 
 @implementation DocumentsIndex
 
+- (BOOL)addDocument:(Document *)document
+{
+    // Override in child classes
+    return NO;
+}
+
 - (NSArray *)searchDocuments:(NSString *)query order:(DocumentsIndexSearchOrder)order
 {
     // Parse query
@@ -27,6 +33,7 @@
 
 - (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
 {
+    // Override in child classes
     return [NSArray array];
 }
 

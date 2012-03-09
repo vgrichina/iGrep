@@ -282,7 +282,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
          [NSString stringWithUTF8String:columnValues[0]]];
         return 0;
     })) {
-        return MAP(uris, [[Document alloc] initWithURI:[NSURL URLWithString:obj]]);
+        return MAP(uris, [[Document alloc] initWithURI:obj]);
     } else {
         return nil;
     }
