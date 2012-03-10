@@ -177,7 +177,7 @@ struct term_doc {
     }
 }
 
-- (NSArray *)mergeDocs:(struct term_doc **)docs numDocs:(int *)numDocs count:(int)count
+- (NSArray *)mergeDocs:(struct term_doc **)docs numDocs:(int *)numDocs count:(int)count limit:(int)limit
 {
     NSMutableArray *results = [NSMutableArray array];
     do {
@@ -204,11 +204,17 @@ struct term_doc {
                 return results;
             }
         }
+
+        if (results.count >= limit) {
+            return results;
+        }
     } while (YES);
 }
 
 - (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
 {
+    int limit = 30;
+
     @synchronized(documents) {
         // Search in cached terms
         NSMutableArray *results = [NSMutableArray array];
@@ -223,8 +229,8 @@ struct term_doc {
                                          [[Document alloc] initWithURI:
                                           [documents objectAtIndex:[obj intValue]]])];
 
-        if (!data) {
-            return results;
+        if (!data || results.count >= limit) {
+            return [results subarrayWithRange:NSMakeRange(0, MIN(limit, results.count))];
         }
 
         // Search in index file
@@ -256,7 +262,7 @@ struct term_doc {
 
             if (allFound) {
                 [results addObjectsFromArray:
-                 MAP([self mergeDocs:docs numDocs:numDocs count:[queryTerms count]],
+                 MAP([self mergeDocs:docs numDocs:numDocs count:[queryTerms count] limit:limit],
                      [[Document alloc] initWithURI:
                       [documents objectAtIndex:[obj intValue]]])];
             }
@@ -265,6 +271,10 @@ struct term_doc {
             free(docs);
 
             chunk = (void *)chunk + *chunk;
+
+            if (results.count >= limit) {
+                return results;
+            }
         }
 
         return results;
