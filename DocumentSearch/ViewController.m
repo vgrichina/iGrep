@@ -10,6 +10,9 @@
 
 #import "RawFileIndex.h"
 
+#import "ZipFile.h"
+#import "FileInZipInfo.h"
+
 @implementation ViewController
 
 @synthesize index, filteredListContent, searchWasActive, savedSearchTerm, savedScopeButtonIndex;
@@ -23,31 +26,28 @@
 
     self.index = [[RawFileIndex alloc] initWithFile:indexPath];
 
-    NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir"];
-    NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
+    NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir.zip"];
+    ZipFile *zipFile = [[ZipFile alloc] initWithFileName:mailPath mode:ZipFileModeUnzip];
+    NSArray *files = [zipFile listFileInZipInfos];
+    [zipFile close];
 
     int totalIndexed = 0;
-    NSString *file;
-    while (file = [filesEnumerator nextObject]) {
-        file = [mailPath stringByAppendingPathComponent:file];
+    for  (FileInZipInfo *fileInfo in files) {
+        NSString *uri = [NSString stringWithFormat:@"zip:%@!%@",
+                         [[NSURL fileURLWithPath:mailPath] absoluteString], fileInfo.name];
 
-        BOOL isDir;
-        if ([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDir] && !isDir) {
-            //NSLog(@"Indexing file: %@", file);
-
-            @autoreleasepool {
-                Document *doc = [[Document alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
-                if ([self.index addDocument:doc]) {
-                    totalIndexed++;
-                } else {
-                    NSLog(@"Failed to index: %@", file);
-                }
+        @autoreleasepool {
+            Document *doc = [[Document alloc] initWithURI:uri];
+            if ([self.index addDocument:doc]) {
+                totalIndexed++;
+            } else {
+                NSLog(@"Failed to index: %@", uri);
             }
-
-            [self performSelectorOnMainThread:@selector(setTitle:)
-                                   withObject:[NSString stringWithFormat:@"%d files indexed", totalIndexed]
-                                waitUntilDone:NO];
         }
+
+        [self performSelectorOnMainThread:@selector(setTitle:)
+                               withObject:[NSString stringWithFormat:@"%d files indexed", totalIndexed]
+                            waitUntilDone:NO];
     }
 
     [self performSelectorOnMainThread:@selector(setTitle:)

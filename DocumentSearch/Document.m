@@ -39,6 +39,7 @@
             ZipReadStream *stream = [zipFile readCurrentFileInZip];
             NSData *fileData = [stream readDataOfLength:fileInfo.length];
             _content = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+            [zipFile close];
         } else {
             NSError *error = nil;
             _content = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.uri]
