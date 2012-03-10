@@ -27,5 +27,6 @@
 @property(readonly) NSString *title;
 
 - (id)initWithURI:(NSString *)uri;
+- (id)initWithURI:(NSString *)uri data:(NSData *)data;
 
 @end

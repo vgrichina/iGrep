@@ -12,6 +12,7 @@
 
 #import "ZipFile.h"
 #import "FileInZipInfo.h"
+#import "ZipReadStream.h"
 
 @implementation ViewController
 
@@ -28,27 +29,38 @@
 
     NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir.zip"];
     ZipFile *zipFile = [[ZipFile alloc] initWithFileName:mailPath mode:ZipFileModeUnzip];
-    NSArray *files = [zipFile listFileInZipInfos];
-    [zipFile close];
 
     int totalIndexed = 0;
-    for (FileInZipInfo *fileInfo in files) {
-        NSString *uri = [NSString stringWithFormat:@"zip:%@!%@",
-                         [[NSURL fileURLWithPath:mailPath] absoluteString], fileInfo.name];
-
+    do {
         @autoreleasepool {
-            Document *doc = [[Document alloc] initWithURI:uri];
+            NSDate *date = [NSDate new];
+
+            FileInZipInfo *fileInfo = [zipFile getCurrentFileInZipInfo];
+            NSString *uri = [NSString stringWithFormat:@"zip:%@!%@",
+                             [[NSURL fileURLWithPath:mailPath] absoluteString], fileInfo.name];
+
+            ZipReadStream *stream = [zipFile readCurrentFileInZip];
+            NSData *fileData = [stream readDataOfLength:fileInfo.length];
+
+            Document *doc = [[Document alloc] initWithURI:uri data:fileData];
+
+            //NSLog(@"Unzip time: %.3f", -[date timeIntervalSinceNow]);
+
             if ([self.index addDocument:doc]) {
                 totalIndexed++;
             } else {
                 NSLog(@"Failed to index: %@", uri);
             }
+
+            NSLog(@"Total time: %.3f", -[date timeIntervalSinceNow]);
         }
 
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.title = [NSString stringWithFormat:@"%d files indexed", totalIndexed];
         });
-    }
+    } while ([zipFile goToNextFileInZip]);
+
+    [zipFile close];
 
     dispatch_sync(dispatch_get_main_queue(), ^{
         self.title = @"Indexing complete";

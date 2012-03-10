@@ -27,10 +27,23 @@
     return self;
 }
 
+- (id)initWithURI:(NSString *)uri data:(NSData *)data
+{
+    if ((self = [super init])) {
+        _uri = uri;
+        _content = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+
+    return self;
+}
+
+
 - (NSString *)content
 {
     if (!_content) {
         if ([self.uri hasPrefix:@"zip:"]) {
+            NSDate *date = [NSDate new];
+
             NSArray *comps = [[self.uri substringFromIndex:4] componentsSeparatedByString:@"!"];
             NSURL *zipUrl = [NSURL URLWithString:[comps objectAtIndex:0]];
             ZipFile *zipFile = [[ZipFile alloc] initWithFileName:zipUrl.path mode:ZipFileModeUnzip];
@@ -40,6 +53,8 @@
             NSData *fileData = [stream readDataOfLength:fileInfo.length];
             _content = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
             [zipFile close];
+
+            NSLog(@"Unzip time: %.3f", -[date timeIntervalSinceNow]);
         } else {
             NSError *error = nil;
             _content = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.uri]
