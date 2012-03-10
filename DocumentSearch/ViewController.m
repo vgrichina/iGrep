@@ -18,7 +18,7 @@
 @synthesize index, filteredListContent, searchWasActive, savedSearchTerm, savedScopeButtonIndex;
 @synthesize documentViewController;
 
-- (void)startIndexing:(id)ignored
+- (void)startIndexing
 {
     NSString *indexPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.bin"];
     [[NSFileManager defaultManager] removeItemAtPath:indexPath error:NULL];
@@ -32,7 +32,7 @@
     [zipFile close];
 
     int totalIndexed = 0;
-    for  (FileInZipInfo *fileInfo in files) {
+    for (FileInZipInfo *fileInfo in files) {
         NSString *uri = [NSString stringWithFormat:@"zip:%@!%@",
                          [[NSURL fileURLWithPath:mailPath] absoluteString], fileInfo.name];
 
@@ -45,15 +45,14 @@
             }
         }
 
-        [self performSelectorOnMainThread:@selector(setTitle:)
-                               withObject:[NSString stringWithFormat:@"%d files indexed", totalIndexed]
-                            waitUntilDone:NO];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.title = [NSString stringWithFormat:@"%d files indexed", totalIndexed];
+        });
     }
 
-    [self performSelectorOnMainThread:@selector(setTitle:)
-                           withObject:[NSString stringWithFormat:@"Indexing complete", totalIndexed]
-                        waitUntilDone:NO];
-
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        self.title = @"Indexing complete";
+    });
 }
 
 #pragma mark -
@@ -63,7 +62,9 @@
 {
     self.filteredListContent = nil;
 
-    [self performSelectorInBackground:@selector(startIndexing:) withObject:nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self startIndexing];
+    });
 
     // restore search settings if they were saved in didReceiveMemoryWarning.
     if (self.savedSearchTerm) {
@@ -145,11 +146,18 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(DocumentsIndexSearchOrder)scope
 {
-    NSLog(@"Start filtering: %@", searchText);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Start filtering: %@", searchText);
 
-    self.filteredListContent = [self.index searchDocuments:searchText order:scope];
+        NSArray *documents = [self.index searchDocuments:searchText order:scope];
 
-    NSLog(@"Finish filtering: %@", searchText);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.filteredListContent = documents;
+            [self.searchDisplayController.searchResultsTableView reloadData];
+        });
+
+        NSLog(@"Finish filtering: %@", searchText);
+    });
 }
 
 #pragma mark -
