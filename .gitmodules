@@ -1,3 +1,6 @@
 [submodule "MACollectionUtilities"]
 	path = MACollectionUtilities
 	url = git://github.com/mikeash/MACollectionUtilities.git
+[submodule "objective-zip"]
+	path = objective-zip
+	url = git://github.com/AgileBits/objective-zip.git

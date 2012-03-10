@@ -15,6 +15,27 @@
 		D50BA5051503CB48003D88DC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED18071501671700D78E99 /* libsqlite3.dylib */; };
 		D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA50B15042633003D88DC /* DocumentViewController.m */; };
 		D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50BA50C15042634003D88DC /* DocumentViewController.xib */; };
+		D5446691150AC4C100BDAE22 /* maildir.zip in Resources */ = {isa = PBXBuildFile; fileRef = D5446690150AC4C100BDAE22 /* maildir.zip */; };
+		D54466B4150AC59800BDAE22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
+		D54466BE150AC5C500BDAE22 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A3150AC51400BDAE22 /* ioapi.c */; };
+		D54466BF150AC5C500BDAE22 /* ioapi.h in Sources */ = {isa = PBXBuildFile; fileRef = D54466A4150AC51400BDAE22 /* ioapi.h */; };
+		D54466C0150AC5C500BDAE22 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A5150AC51400BDAE22 /* mztools.c */; };
+		D54466C1150AC5C500BDAE22 /* mztools.h in Sources */ = {isa = PBXBuildFile; fileRef = D54466A6150AC51400BDAE22 /* mztools.h */; };
+		D54466C2150AC5C500BDAE22 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A7150AC51400BDAE22 /* unzip.c */; };
+		D54466C3150AC5C500BDAE22 /* unzip.h in Sources */ = {isa = PBXBuildFile; fileRef = D54466A8150AC51400BDAE22 /* unzip.h */; };
+		D54466C4150AC5C500BDAE22 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A9150AC51400BDAE22 /* zip.c */; };
+		D54466C5150AC5C500BDAE22 /* zip.h in Sources */ = {isa = PBXBuildFile; fileRef = D54466AA150AC51400BDAE22 /* zip.h */; };
+		D54466C6150AC5E400BDAE22 /* FileInZipInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = D5446693150AC4F500BDAE22 /* FileInZipInfo.h */; };
+		D54466C7150AC5E400BDAE22 /* FileInZipInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D5446694150AC4F500BDAE22 /* FileInZipInfo.m */; };
+		D54466C8150AC5E400BDAE22 /* ZipException.h in Sources */ = {isa = PBXBuildFile; fileRef = D5446695150AC4F500BDAE22 /* ZipException.h */; };
+		D54466C9150AC5E400BDAE22 /* ZipException.m in Sources */ = {isa = PBXBuildFile; fileRef = D5446696150AC4F500BDAE22 /* ZipException.m */; };
+		D54466CA150AC5E400BDAE22 /* ZipFile.h in Sources */ = {isa = PBXBuildFile; fileRef = D5446697150AC4F500BDAE22 /* ZipFile.h */; };
+		D54466CB150AC5E400BDAE22 /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D5446698150AC4F500BDAE22 /* ZipFile.m */; };
+		D54466CC150AC5E400BDAE22 /* ZipReadStream.h in Sources */ = {isa = PBXBuildFile; fileRef = D5446699150AC4F500BDAE22 /* ZipReadStream.h */; };
+		D54466CD150AC5E400BDAE22 /* ZipReadStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D544669A150AC4F500BDAE22 /* ZipReadStream.m */; };
+		D54466CE150AC5E400BDAE22 /* ZipWriteStream.h in Sources */ = {isa = PBXBuildFile; fileRef = D544669B150AC4F500BDAE22 /* ZipWriteStream.h */; };
+		D54466CF150AC5E400BDAE22 /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D544669C150AC4F500BDAE22 /* ZipWriteStream.m */; };
+		D54466D2150AC8C800BDAE22 /* libObjectiveZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */; };
 		D56308221503ACE000F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
 		D56308241503B52100F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
 		D56308421503B56700F3187F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D563082B1503B54100F3187F /* SenTestingKit.framework */; };
@@ -24,6 +45,10 @@
 		D56308541503B58100F3187F /* DocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308531503B58100F3187F /* DocumentTests.m */; };
 		D56308551503B86500F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
 		D56308561503B87300F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
+		D57F8568150ACFB5004A1C81 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D57F8567150ACFB5004A1C81 /* libz.dylib */; };
+		D57F856A150AD0AC004A1C81 /* libObjectiveZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */; };
+		D57F856B150AD0B1004A1C81 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D57F8567150ACFB5004A1C81 /* libz.dylib */; };
+		D57F856C150AD210004A1C81 /* maildir.zip in Resources */ = {isa = PBXBuildFile; fileRef = D5446690150AC4C100BDAE22 /* maildir.zip */; };
 		D5B73C5015080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
 		D5B73C5115080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
 		D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */; };
@@ -41,6 +66,16 @@
 		D5ED18081501671700D78E99 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED18071501671700D78E99 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D54466D0150AC8BB00BDAE22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5ED17D015013C1300D78E99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D54466B2150AC59800BDAE22;
+			remoteInfo = ObjectiveZip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D50BA4FA1503C630003D88DC /* MACollectionUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MACollectionUtilities.h; path = MACollectionUtilities/MACollectionUtilities.h; sourceTree = "<group>"; };
 		D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MACollectionUtilities.m; path = MACollectionUtilities/MACollectionUtilities.m; sourceTree = "<group>"; };
@@ -51,6 +86,26 @@
 		D50BA50A15042633003D88DC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
 		D50BA50B15042633003D88DC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentViewController.xib; sourceTree = "<group>"; };
+		D5446690150AC4C100BDAE22 /* maildir.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = maildir.zip; sourceTree = SOURCE_ROOT; };
+		D5446693150AC4F500BDAE22 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInZipInfo.h; path = "objective-zip/Objective-Zip/FileInZipInfo.h"; sourceTree = "<group>"; };
+		D5446694150AC4F500BDAE22 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInZipInfo.m; path = "objective-zip/Objective-Zip/FileInZipInfo.m"; sourceTree = "<group>"; };
+		D5446695150AC4F500BDAE22 /* ZipException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipException.h; path = "objective-zip/Objective-Zip/ZipException.h"; sourceTree = "<group>"; };
+		D5446696150AC4F500BDAE22 /* ZipException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipException.m; path = "objective-zip/Objective-Zip/ZipException.m"; sourceTree = "<group>"; };
+		D5446697150AC4F500BDAE22 /* ZipFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipFile.h; path = "objective-zip/Objective-Zip/ZipFile.h"; sourceTree = "<group>"; };
+		D5446698150AC4F500BDAE22 /* ZipFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipFile.m; path = "objective-zip/Objective-Zip/ZipFile.m"; sourceTree = "<group>"; };
+		D5446699150AC4F500BDAE22 /* ZipReadStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipReadStream.h; path = "objective-zip/Objective-Zip/ZipReadStream.h"; sourceTree = "<group>"; };
+		D544669A150AC4F500BDAE22 /* ZipReadStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipReadStream.m; path = "objective-zip/Objective-Zip/ZipReadStream.m"; sourceTree = "<group>"; };
+		D544669B150AC4F500BDAE22 /* ZipWriteStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipWriteStream.h; path = "objective-zip/Objective-Zip/ZipWriteStream.h"; sourceTree = "<group>"; };
+		D544669C150AC4F500BDAE22 /* ZipWriteStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipWriteStream.m; path = "objective-zip/Objective-Zip/ZipWriteStream.m"; sourceTree = "<group>"; };
+		D54466A3150AC51400BDAE22 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = "objective-zip/MiniZip/ioapi.c"; sourceTree = "<group>"; };
+		D54466A4150AC51400BDAE22 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = "objective-zip/MiniZip/ioapi.h"; sourceTree = "<group>"; };
+		D54466A5150AC51400BDAE22 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = "objective-zip/MiniZip/mztools.c"; sourceTree = "<group>"; };
+		D54466A6150AC51400BDAE22 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = "objective-zip/MiniZip/mztools.h"; sourceTree = "<group>"; };
+		D54466A7150AC51400BDAE22 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = "objective-zip/MiniZip/unzip.c"; sourceTree = "<group>"; };
+		D54466A8150AC51400BDAE22 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = "objective-zip/MiniZip/unzip.h"; sourceTree = "<group>"; };
+		D54466A9150AC51400BDAE22 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = "objective-zip/MiniZip/zip.c"; sourceTree = "<group>"; };
+		D54466AA150AC51400BDAE22 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = "objective-zip/MiniZip/zip.h"; sourceTree = "<group>"; };
+		D54466B3150AC59800BDAE22 /* libObjectiveZip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveZip.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56308201503ACE000F3187F /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		D56308211503ACE000F3187F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		D56308231503B52100F3187F /* maildir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maildir; sourceTree = SOURCE_ROOT; };
@@ -61,13 +116,14 @@
 		D563084E1503B56700F3187F /* DocumentSearchTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocumentSearchTests-Prefix.pch"; sourceTree = "<group>"; };
 		D56308521503B58100F3187F /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTests.h; sourceTree = "<group>"; };
 		D56308531503B58100F3187F /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTests.m; sourceTree = "<group>"; };
+		D57F8567150ACFB5004A1C81 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D5B73C4E15080FE800E34F33 /* SqliteDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteDocumentsIndex.h; sourceTree = "<group>"; };
 		D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteDocumentsIndex.m; sourceTree = "<group>"; };
 		D5B73C53150814AE00E34F33 /* SqliteIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteIndexTests.h; sourceTree = "<group>"; };
 		D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteIndexTests.m; sourceTree = "<group>"; };
 		D5B73C56150816B700E34F33 /* RawFileIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawFileIndex.h; sourceTree = "<group>"; };
 		D5B73C57150816B700E34F33 /* RawFileIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndex.m; sourceTree = "<group>"; };
-		D5B73C5A1508231D00E34F33 /* RawFileIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RawFileIndexTests.h; sourceTree = "<group>"; };
+		D5B73C5A1508231D00E34F33 /* RawFileIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawFileIndexTests.h; sourceTree = "<group>"; };
 		D5B73C5B1508231D00E34F33 /* RawFileIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndexTests.m; sourceTree = "<group>"; };
 		D5ED17D915013C1400D78E99 /* DocumentSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5ED17DD15013C1400D78E99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -86,10 +142,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D54466B0150AC59800BDAE22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D54466B4150AC59800BDAE22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D563083D1503B56700F3187F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57F856B150AD0B1004A1C81 /* libz.dylib in Frameworks */,
+				D57F856A150AD0AC004A1C81 /* libObjectiveZip.a in Frameworks */,
 				D50BA5051503CB48003D88DC /* libsqlite3.dylib in Frameworks */,
 				D56308421503B56700F3187F /* SenTestingKit.framework in Frameworks */,
 				D56308431503B56700F3187F /* UIKit.framework in Frameworks */,
@@ -101,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57F8568150ACFB5004A1C81 /* libz.dylib in Frameworks */,
+				D54466D2150AC8C800BDAE22 /* libObjectiveZip.a in Frameworks */,
 				D5ED18081501671700D78E99 /* libsqlite3.dylib in Frameworks */,
 				D5ED17DE15013C1400D78E99 /* UIKit.framework in Frameworks */,
 				D5ED17E015013C1400D78E99 /* Foundation.framework in Frameworks */,
@@ -118,6 +186,38 @@
 				D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */,
 			);
 			name = MACollectionUtilities;
+			sourceTree = "<group>";
+		};
+		D5446692150AC4CC00BDAE22 /* Objective-Zip */ = {
+			isa = PBXGroup;
+			children = (
+				D5446693150AC4F500BDAE22 /* FileInZipInfo.h */,
+				D5446694150AC4F500BDAE22 /* FileInZipInfo.m */,
+				D5446695150AC4F500BDAE22 /* ZipException.h */,
+				D5446696150AC4F500BDAE22 /* ZipException.m */,
+				D5446697150AC4F500BDAE22 /* ZipFile.h */,
+				D5446698150AC4F500BDAE22 /* ZipFile.m */,
+				D5446699150AC4F500BDAE22 /* ZipReadStream.h */,
+				D544669A150AC4F500BDAE22 /* ZipReadStream.m */,
+				D544669B150AC4F500BDAE22 /* ZipWriteStream.h */,
+				D544669C150AC4F500BDAE22 /* ZipWriteStream.m */,
+			);
+			name = "Objective-Zip";
+			sourceTree = "<group>";
+		};
+		D54466A2150AC50600BDAE22 /* MiniZip */ = {
+			isa = PBXGroup;
+			children = (
+				D54466A3150AC51400BDAE22 /* ioapi.c */,
+				D54466A4150AC51400BDAE22 /* ioapi.h */,
+				D54466A5150AC51400BDAE22 /* mztools.c */,
+				D54466A6150AC51400BDAE22 /* mztools.h */,
+				D54466A7150AC51400BDAE22 /* unzip.c */,
+				D54466A8150AC51400BDAE22 /* unzip.h */,
+				D54466A9150AC51400BDAE22 /* zip.c */,
+				D54466AA150AC51400BDAE22 /* zip.h */,
+			);
+			name = MiniZip;
 			sourceTree = "<group>";
 		};
 		D56308451503B56700F3187F /* DocumentSearchTests */ = {
@@ -149,6 +249,8 @@
 		D5ED17CE15013C1300D78E99 = {
 			isa = PBXGroup;
 			children = (
+				D54466A2150AC50600BDAE22 /* MiniZip */,
+				D5446692150AC4CC00BDAE22 /* Objective-Zip */,
 				D50BA4F81503C5F7003D88DC /* MACollectionUtilities */,
 				D5ED17E315013C1400D78E99 /* DocumentSearch */,
 				D56308451503B56700F3187F /* DocumentSearchTests */,
@@ -162,6 +264,7 @@
 			children = (
 				D5ED17D915013C1400D78E99 /* DocumentSearch.app */,
 				D56308411503B56700F3187F /* DocumentSearchTests.octest */,
+				D54466B3150AC59800BDAE22 /* libObjectiveZip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +272,7 @@
 		D5ED17DC15013C1400D78E99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D57F8567150ACFB5004A1C81 /* libz.dylib */,
 				D5ED18071501671700D78E99 /* libsqlite3.dylib */,
 				D5ED17DD15013C1400D78E99 /* UIKit.framework */,
 				D5ED17DF15013C1400D78E99 /* Foundation.framework */,
@@ -205,6 +309,7 @@
 		D5ED17E415013C1400D78E99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5446690150AC4C100BDAE22 /* maildir.zip */,
 				D56308231503B52100F3187F /* maildir */,
 				D5ED17E515013C1400D78E99 /* DocumentSearch-Info.plist */,
 				D5ED17E615013C1400D78E99 /* InfoPlist.strings */,
@@ -216,7 +321,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D54466B1150AC59800BDAE22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		D54466B2150AC59800BDAE22 /* ObjectiveZip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D54466BB150AC59800BDAE22 /* Build configuration list for PBXNativeTarget "ObjectiveZip" */;
+			buildPhases = (
+				D54466AF150AC59800BDAE22 /* Sources */,
+				D54466B0150AC59800BDAE22 /* Frameworks */,
+				D54466B1150AC59800BDAE22 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjectiveZip;
+			productName = ObjectiveZip;
+			productReference = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D56308401503B56700F3187F /* DocumentSearchTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "DocumentSearchTests" */;
@@ -246,6 +378,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D54466D1150AC8BB00BDAE22 /* PBXTargetDependency */,
 			);
 			name = DocumentSearch;
 			productName = Autocomplete;
@@ -274,6 +407,7 @@
 			targets = (
 				D5ED17D815013C1400D78E99 /* DocumentSearch */,
 				D56308401503B56700F3187F /* DocumentSearchTests */,
+				D54466B2150AC59800BDAE22 /* ObjectiveZip */,
 			);
 		};
 /* End PBXProject section */
@@ -285,6 +419,7 @@
 			files = (
 				D563084A1503B56700F3187F /* InfoPlist.strings in Resources */,
 				D56308561503B87300F3187F /* maildir in Resources */,
+				D57F856C150AD210004A1C81 /* maildir.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +431,7 @@
 				D5ED17F415013C1400D78E99 /* ViewController.xib in Resources */,
 				D56308241503B52100F3187F /* maildir in Resources */,
 				D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */,
+				D5446691150AC4C100BDAE22 /* maildir.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +454,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D54466AF150AC59800BDAE22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D54466BE150AC5C500BDAE22 /* ioapi.c in Sources */,
+				D54466BF150AC5C500BDAE22 /* ioapi.h in Sources */,
+				D54466C0150AC5C500BDAE22 /* mztools.c in Sources */,
+				D54466C1150AC5C500BDAE22 /* mztools.h in Sources */,
+				D54466C2150AC5C500BDAE22 /* unzip.c in Sources */,
+				D54466C3150AC5C500BDAE22 /* unzip.h in Sources */,
+				D54466C4150AC5C500BDAE22 /* zip.c in Sources */,
+				D54466C5150AC5C500BDAE22 /* zip.h in Sources */,
+				D54466C6150AC5E400BDAE22 /* FileInZipInfo.h in Sources */,
+				D54466C7150AC5E400BDAE22 /* FileInZipInfo.m in Sources */,
+				D54466C8150AC5E400BDAE22 /* ZipException.h in Sources */,
+				D54466C9150AC5E400BDAE22 /* ZipException.m in Sources */,
+				D54466CA150AC5E400BDAE22 /* ZipFile.h in Sources */,
+				D54466CB150AC5E400BDAE22 /* ZipFile.m in Sources */,
+				D54466CC150AC5E400BDAE22 /* ZipReadStream.h in Sources */,
+				D54466CD150AC5E400BDAE22 /* ZipReadStream.m in Sources */,
+				D54466CE150AC5E400BDAE22 /* ZipWriteStream.h in Sources */,
+				D54466CF150AC5E400BDAE22 /* ZipWriteStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D563083C1503B56700F3187F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +513,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D54466D1150AC8BB00BDAE22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D54466B2150AC59800BDAE22 /* ObjectiveZip */;
+			targetProxy = D54466D0150AC8BB00BDAE22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D56308481503B56700F3187F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -380,6 +549,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D54466BC150AC59800BDAE22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/ObjectiveZip.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D54466BD150AC59800BDAE22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/ObjectiveZip.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D56308501503B56700F3187F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,6 +679,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D54466BB150AC59800BDAE22 /* Build configuration list for PBXNativeTarget "ObjectiveZip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D54466BC150AC59800BDAE22 /* Debug */,
+				D54466BD150AC59800BDAE22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "DocumentSearchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

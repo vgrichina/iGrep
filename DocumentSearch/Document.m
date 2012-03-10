@@ -10,6 +10,10 @@
 
 #import "MACollectionUtilities.h"
 
+#import "ZipFile.h"
+#import "FileInZipInfo.h"
+#import "ZipReadStream.h"
+
 @implementation Document
 
 @synthesize uri = _uri;
@@ -26,12 +30,23 @@
 - (NSString *)content
 {
     if (!_content) {
-        NSError *error = nil;
-        _content = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.uri]
-                                            encoding:NSUTF8StringEncoding
-                                               error:&error];
-        if (error) {
-            NSLog(@"Cannot load document with URL: %@\nError: %@", self.uri, error.description);
+        if ([self.uri hasPrefix:@"zip:"]) {
+            NSArray *comps = [[self.uri substringFromIndex:4] componentsSeparatedByString:@"!"];
+            NSURL *zipUrl = [NSURL URLWithString:[comps objectAtIndex:0]];
+            ZipFile *zipFile = [[ZipFile alloc] initWithFileName:zipUrl.path mode:ZipFileModeUnzip];
+            [zipFile locateFileInZip:[comps objectAtIndex:1]];
+            FileInZipInfo *fileInfo = [zipFile getCurrentFileInZipInfo];
+            ZipReadStream *stream = [zipFile readCurrentFileInZip];
+            NSData *fileData = [stream readDataOfLength:fileInfo.length];
+            _content = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+        } else {
+            NSError *error = nil;
+            _content = [NSString stringWithContentsOfURL:[NSURL URLWithString:self.uri]
+                                                encoding:NSUTF8StringEncoding
+                                                   error:&error];
+            if (error) {
+                NSLog(@"Cannot load document with URL: %@\nError: %@", self.uri, error.description);
+            }
         }
     }
 
