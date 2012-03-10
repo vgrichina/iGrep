@@ -25,6 +25,11 @@
     [self doTestAddDocument];
 }
 
+- (void)testAddDocumentFromZip
+{
+    [self doTestAddDocumentFromZip];
+}
+
 - (void)testSearchDocuments
 {
     [self doTestSearchDocuments];

@@ -15,6 +15,7 @@
 @property(strong) DocumentsIndex *index;
 
 - (void)doTestAddDocument;
+- (void)doTestAddDocumentFromZip;
 - (void)doTestSearchDocuments;
 - (void)doTestPerformance;
 

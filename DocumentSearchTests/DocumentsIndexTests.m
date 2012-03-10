@@ -22,6 +22,17 @@
     STAssertFalse([self.index addDocument:document], @"Document added");
 }
 
+- (void)doTestAddDocumentFromZip
+{
+    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+                      URLByAppendingPathComponent:@"maildir.zip"] absoluteString];
+    url = [NSString stringWithFormat:@"zip:%@!%@", url, @"maildir/mcconnell-m/_sent_mail/1."];
+    Document *document = [[Document alloc] initWithURI:url];
+
+    STAssertTrue([self.index addDocument:document], @"Document added");
+    STAssertFalse([self.index addDocument:document], @"Document added");
+}
+
 - (void)doTestSearchDocuments
 {
     [self doTestAddDocument];
