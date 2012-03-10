@@ -17,6 +17,8 @@
 
 #define MAX_TERM_LEN 20
 
+#define DOCS_PER_CHUNK 1000
+
 struct term {
     int docs_offset;
     int docs_count;
@@ -167,7 +169,7 @@ struct term_doc {
             [docIds addObject:[NSNumber numberWithInt:documents.count - 1]];
         }
 
-        if (documents.count % 100 == 0) {
+        if (documents.count % DOCS_PER_CHUNK == 0) {
             [self writeToFile];
         }
 
