@@ -36,7 +36,7 @@ struct term_doc {
         termsCache = [NSMutableDictionary dictionary];
         documents = [NSMutableOrderedSet orderedSet];
 
-        if ((fd = open(file.UTF8String, O_RDWR | O_CREAT)) < 0) {
+        if ((fd = open(file.UTF8String, O_RDWR | O_CREAT, 600)) < 0) {
             NSLog(@"Cannot open: %@", file);
             return nil;
         }

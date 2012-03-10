@@ -37,7 +37,6 @@
 		D54466CF150AC5E400BDAE22 /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D544669C150AC4F500BDAE22 /* ZipWriteStream.m */; };
 		D54466D2150AC8C800BDAE22 /* libObjectiveZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */; };
 		D56308221503ACE000F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
-		D56308241503B52100F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
 		D56308421503B56700F3187F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D563082B1503B54100F3187F /* SenTestingKit.framework */; };
 		D56308431503B56700F3187F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DD15013C1400D78E99 /* UIKit.framework */; };
 		D56308441503B56700F3187F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
@@ -429,7 +428,6 @@
 			files = (
 				D5ED17E815013C1400D78E99 /* InfoPlist.strings in Resources */,
 				D5ED17F415013C1400D78E99 /* ViewController.xib in Resources */,
-				D56308241503B52100F3187F /* maildir in Resources */,
 				D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */,
 				D5446691150AC4C100BDAE22 /* maildir.zip in Resources */,
 			);
