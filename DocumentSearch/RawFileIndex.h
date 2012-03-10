@@ -15,6 +15,8 @@
     int fileSize;
 
     NSMutableOrderedSet *documents;
+    NSMutableArray *documentTitles;
+    NSMutableArray *documentDates;
     NSMutableDictionary *termsCache;
 }
 

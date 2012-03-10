@@ -37,6 +37,8 @@ struct term_doc {
     if ((self = [super init])) {
         termsCache = [NSMutableDictionary dictionary];
         documents = [NSMutableOrderedSet orderedSet];
+        documentTitles = [NSMutableArray array];
+        documentDates = [NSMutableArray array];
 
         if ((fd = open(file.UTF8String, O_RDWR | O_CREAT, 600)) < 0) {
             NSLog(@"Cannot open: %@", file);
@@ -160,6 +162,8 @@ struct term_doc {
         }
 
         [documents addObject:document.uri];
+        [documentTitles addObject:document.title];
+        [documentDates addObject:document.date];
 
         for (NSString *term in document.terms) {
             NSMutableOrderedSet *docIds = [termsCache objectForKey:term];
@@ -211,6 +215,13 @@ struct term_doc {
     } while (YES);
 }
 
+- (Document *)documentWithId:(int)docId
+{
+    return [[Document alloc] initWithURI:[documents objectAtIndex:docId]
+                                   title:[documentTitles objectAtIndex:docId]
+                                    date:[documentDates objectAtIndex:docId]];
+}
+
 - (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
 {
     int limit = 30;
@@ -226,8 +237,7 @@ struct term_doc {
         }
 
         [results addObjectsFromArray:MAP([set array],
-                                         [[Document alloc] initWithURI:
-                                          [documents objectAtIndex:[obj intValue]]])];
+                                         [self documentWithId:[obj intValue]])];
 
         if (!data || results.count >= limit) {
             return [results subarrayWithRange:NSMakeRange(0, MIN(limit, results.count))];
@@ -263,8 +273,7 @@ struct term_doc {
             if (allFound) {
                 [results addObjectsFromArray:
                  MAP([self mergeDocs:docs numDocs:numDocs count:[queryTerms count] limit:limit],
-                     [[Document alloc] initWithURI:
-                      [documents objectAtIndex:[obj intValue]]])];
+                     [self documentWithId:[obj intValue]])];
             }
 
             free(numDocs);
