@@ -28,5 +28,6 @@
 
 - (id)initWithURI:(NSString *)uri;
 - (id)initWithURI:(NSString *)uri data:(NSData *)data;
+- (id)initWithURI:(NSString *)uri title:(NSString *)title date:(NSDate *)date;
 
 @end
