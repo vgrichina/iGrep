@@ -229,7 +229,7 @@ struct term_doc {
     @synchronized(documents) {
         // Search in cached terms
         NSMutableArray *results = [NSMutableArray array];
-        NSMutableOrderedSet *set = [termsCache objectForKey:[queryTerms lastObject]];
+        NSMutableOrderedSet *set = [[termsCache objectForKey:[queryTerms lastObject]] mutableCopy];
 
         for (int i = 0; i < [queryTerms count] - 1; i++) {
             NSString *term = [queryTerms objectAtIndex:i];
