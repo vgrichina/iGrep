@@ -12,8 +12,14 @@
 
 @implementation CXDocumentsIndex
 
-- (BOOL)addDocument:(CXDocument *)document
+@synthesize documentClass;
+
+- (BOOL)addDocument:(id<CXDocument>)document
 {
+    if (!self.documentClass) {
+        self.documentClass = [document class];
+    }
+
     // Override in child classes
     return NO;
 }
