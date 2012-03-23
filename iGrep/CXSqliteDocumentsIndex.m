@@ -1,12 +1,12 @@
 //
-//  SqliteDocumentsIndex.m
-//  DocumentSearch
+//  CXSqliteDocumentsIndex.m
+//  iGrep
 //
 //  Created by Vladimir Grichina on 07.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "SqliteDocumentsIndex.h"
+#import "CXSqliteDocumentsIndex.h"
 
 #import "MACollectionUtilities.h"
 
@@ -45,7 +45,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 }
 
 
-@implementation SqliteDocumentsIndex
+@implementation CXSqliteDocumentsIndex
 
 - (id)initWithDatabase:(NSString *)database
 {
@@ -105,7 +105,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     sqlite3_close(db);
 }
 
-- (BOOL)addDocument:(Document *)document
+- (BOOL)addDocument:(CXDocument *)document
 {
     // Start transaction
     if (!Exec(db, @"BEGIN", nop)) {
@@ -215,7 +215,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     }
 }
 
-- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
+- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(CXDocumentsIndexSearchOrder)order
 {
     // Search best completions for last term
     NSArray *lastTerms = [self termCompletions:[queryTerms lastObject]];
@@ -228,7 +228,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     [sql appendString:@"(SELECT uri"];
     int i = 0;
 
-    if (order == DocumentsIndexSearchOrderTfIdf) {
+    if (order == CXDocumentsIndexSearchOrderTfIdf) {
         for (NSString *term in queryTerms) {
             [sql appendFormat:@", t%d.num_documents as t%dnd, dt%d.occurences as dt%do", i, i, i, i];
             i++;
@@ -259,7 +259,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
 
     [sql appendFormat:@" LIMIT 1000)"];
 
-    if (order == DocumentsIndexSearchOrderDate) {
+    if (order == CXDocumentsIndexSearchOrderDate) {
         [sql appendFormat:@" ORDER BY DATE DESC"];
     } else {
         [sql appendFormat:@" ORDER BY "];
@@ -282,7 +282,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
          [NSString stringWithUTF8String:columnValues[0]]];
         return 0;
     })) {
-        return MAP(uris, [[Document alloc] initWithURI:obj]);
+        return MAP(uris, [[CXDocument alloc] initWithURI:obj]);
     } else {
         return nil;
     }

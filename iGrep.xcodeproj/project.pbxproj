@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		D50BA4FC1503C630003D88DC /* MACollectionUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */; };
 		D50BA4FD1503C7A9003D88DC /* MACollectionUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */; };
-		D50BA5001503CA42003D88DC /* DocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */; };
-		D50BA5011503CA42003D88DC /* DocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */; };
+		D50BA5001503CA42003D88DC /* CXDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FF1503CA42003D88DC /* CXDocumentsIndex.m */; };
+		D50BA5011503CA42003D88DC /* CXDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA4FF1503CA42003D88DC /* CXDocumentsIndex.m */; };
 		D50BA5041503CA70003D88DC /* DocumentsIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */; };
 		D50BA5051503CB48003D88DC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED18071501671700D78E99 /* libsqlite3.dylib */; };
 		D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA50B15042633003D88DC /* DocumentViewController.m */; };
@@ -36,23 +36,23 @@
 		D54466CE150AC5E400BDAE22 /* ZipWriteStream.h in Sources */ = {isa = PBXBuildFile; fileRef = D544669B150AC4F500BDAE22 /* ZipWriteStream.h */; };
 		D54466CF150AC5E400BDAE22 /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D544669C150AC4F500BDAE22 /* ZipWriteStream.m */; };
 		D54466D2150AC8C800BDAE22 /* libObjectiveZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */; };
-		D56308221503ACE000F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
+		D56308221503ACE000F3187F /* CXDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* CXDocument.m */; };
 		D56308421503B56700F3187F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D563082B1503B54100F3187F /* SenTestingKit.framework */; };
 		D56308431503B56700F3187F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DD15013C1400D78E99 /* UIKit.framework */; };
 		D56308441503B56700F3187F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
 		D563084A1503B56700F3187F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D56308481503B56700F3187F /* InfoPlist.strings */; };
 		D56308541503B58100F3187F /* DocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308531503B58100F3187F /* DocumentTests.m */; };
-		D56308551503B86500F3187F /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* Document.m */; };
+		D56308551503B86500F3187F /* CXDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* CXDocument.m */; };
 		D56308561503B87300F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
 		D57F8568150ACFB5004A1C81 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D57F8567150ACFB5004A1C81 /* libz.dylib */; };
 		D57F856A150AD0AC004A1C81 /* libObjectiveZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */; };
 		D57F856B150AD0B1004A1C81 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D57F8567150ACFB5004A1C81 /* libz.dylib */; };
 		D57F856C150AD210004A1C81 /* maildir.zip in Resources */ = {isa = PBXBuildFile; fileRef = D5446690150AC4C100BDAE22 /* maildir.zip */; };
-		D5B73C5015080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
-		D5B73C5115080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */; };
+		D5B73C5015080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */; };
+		D5B73C5115080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */; };
 		D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */; };
-		D5B73C58150816B700E34F33 /* RawFileIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C57150816B700E34F33 /* RawFileIndex.m */; };
-		D5B73C59150816B700E34F33 /* RawFileIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C57150816B700E34F33 /* RawFileIndex.m */; };
+		D5B73C58150816B700E34F33 /* CXRawFileIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C57150816B700E34F33 /* CXRawFileIndex.m */; };
+		D5B73C59150816B700E34F33 /* CXRawFileIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C57150816B700E34F33 /* CXRawFileIndex.m */; };
 		D5B73C5C1508231D00E34F33 /* RawFileIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B73C5B1508231D00E34F33 /* RawFileIndexTests.m */; };
 		D5ED17DE15013C1400D78E99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DD15013C1400D78E99 /* UIKit.framework */; };
 		D5ED17E015013C1400D78E99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
@@ -78,13 +78,13 @@
 /* Begin PBXFileReference section */
 		D50BA4FA1503C630003D88DC /* MACollectionUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MACollectionUtilities.h; path = MACollectionUtilities/MACollectionUtilities.h; sourceTree = "<group>"; };
 		D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MACollectionUtilities.m; path = MACollectionUtilities/MACollectionUtilities.m; sourceTree = "<group>"; };
-		D50BA4FE1503CA42003D88DC /* DocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentsIndex.h; sourceTree = "<group>"; };
-		D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentsIndex.m; sourceTree = "<group>"; };
+		D50BA4FE1503CA42003D88DC /* CXDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDocumentsIndex.h; sourceTree = "<group>"; };
+		D50BA4FF1503CA42003D88DC /* CXDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXDocumentsIndex.m; sourceTree = "<group>"; };
 		D50BA5021503CA70003D88DC /* DocumentsIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentsIndexTests.h; sourceTree = "<group>"; };
 		D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentsIndexTests.m; sourceTree = "<group>"; };
-		D50BA50A15042633003D88DC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
-		D50BA50B15042633003D88DC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
-		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentViewController.xib; sourceTree = "<group>"; };
+		D50BA50A15042633003D88DC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = iGrep/DocumentViewController.h; sourceTree = "<group>"; };
+		D50BA50B15042633003D88DC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentViewController.m; path = iGrep/DocumentViewController.m; sourceTree = "<group>"; };
+		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DocumentViewController.xib; path = iGrep/DocumentViewController.xib; sourceTree = "<group>"; };
 		D5446690150AC4C100BDAE22 /* maildir.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = maildir.zip; sourceTree = SOURCE_ROOT; };
 		D5446693150AC4F500BDAE22 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInZipInfo.h; path = "objective-zip/Objective-Zip/FileInZipInfo.h"; sourceTree = "<group>"; };
 		D5446694150AC4F500BDAE22 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInZipInfo.m; path = "objective-zip/Objective-Zip/FileInZipInfo.m"; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		D54466A9150AC51400BDAE22 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = "objective-zip/MiniZip/zip.c"; sourceTree = "<group>"; };
 		D54466AA150AC51400BDAE22 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = "objective-zip/MiniZip/zip.h"; sourceTree = "<group>"; };
 		D54466B3150AC59800BDAE22 /* libObjectiveZip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveZip.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D56308201503ACE000F3187F /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		D56308211503ACE000F3187F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		D56308201503ACE000F3187F /* CXDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDocument.h; sourceTree = "<group>"; };
+		D56308211503ACE000F3187F /* CXDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXDocument.m; sourceTree = "<group>"; };
 		D56308231503B52100F3187F /* maildir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maildir; sourceTree = SOURCE_ROOT; };
 		D563082B1503B54100F3187F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D56308411503B56700F3187F /* iGrepTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGrepTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,12 +116,12 @@
 		D56308521503B58100F3187F /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTests.h; sourceTree = "<group>"; };
 		D56308531503B58100F3187F /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTests.m; sourceTree = "<group>"; };
 		D57F8567150ACFB5004A1C81 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D5B73C4E15080FE800E34F33 /* SqliteDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteDocumentsIndex.h; sourceTree = "<group>"; };
-		D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteDocumentsIndex.m; sourceTree = "<group>"; };
+		D5B73C4E15080FE800E34F33 /* CXSqliteDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSqliteDocumentsIndex.h; sourceTree = "<group>"; };
+		D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSqliteDocumentsIndex.m; sourceTree = "<group>"; };
 		D5B73C53150814AE00E34F33 /* SqliteIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteIndexTests.h; sourceTree = "<group>"; };
 		D5B73C54150814AE00E34F33 /* SqliteIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteIndexTests.m; sourceTree = "<group>"; };
-		D5B73C56150816B700E34F33 /* RawFileIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawFileIndex.h; sourceTree = "<group>"; };
-		D5B73C57150816B700E34F33 /* RawFileIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndex.m; sourceTree = "<group>"; };
+		D5B73C56150816B700E34F33 /* CXRawFileIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXRawFileIndex.h; sourceTree = "<group>"; };
+		D5B73C57150816B700E34F33 /* CXRawFileIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXRawFileIndex.m; sourceTree = "<group>"; };
 		D5B73C5A1508231D00E34F33 /* RawFileIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawFileIndexTests.h; sourceTree = "<group>"; };
 		D5B73C5B1508231D00E34F33 /* RawFileIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndexTests.m; sourceTree = "<group>"; };
 		D5ED17D915013C1400D78E99 /* iGrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,10 +132,10 @@
 		D5ED17E715013C1400D78E99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5ED17E915013C1400D78E99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5ED17EB15013C1400D78E99 /* iGrep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iGrep-Prefix.pch"; sourceTree = "<group>"; };
-		D5ED17EC15013C1400D78E99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D5ED17ED15013C1400D78E99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D5ED17EF15013C1400D78E99 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D5ED17F015013C1400D78E99 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D5ED17EC15013C1400D78E99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iGrep/AppDelegate.h; sourceTree = "<group>"; };
+		D5ED17ED15013C1400D78E99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iGrep/AppDelegate.m; sourceTree = "<group>"; };
+		D5ED17EF15013C1400D78E99 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = iGrep/ViewController.h; sourceTree = "<group>"; };
+		D5ED17F015013C1400D78E99 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = iGrep/ViewController.m; sourceTree = "<group>"; };
 		D5ED17F315013C1400D78E99 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D5ED18071501671700D78E99 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -185,6 +185,32 @@
 				D50BA4FB1503C630003D88DC /* MACollectionUtilities.m */,
 			);
 			name = MACollectionUtilities;
+			sourceTree = "<group>";
+		};
+		D53DB58A151D0C7B003061B1 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				D5ED17EC15013C1400D78E99 /* AppDelegate.h */,
+				D5ED17ED15013C1400D78E99 /* AppDelegate.m */,
+				D5ED17EF15013C1400D78E99 /* ViewController.h */,
+				D5ED17F015013C1400D78E99 /* ViewController.m */,
+				D5ED17F215013C1400D78E99 /* ViewController.xib */,
+				D50BA50A15042633003D88DC /* DocumentViewController.h */,
+				D50BA50B15042633003D88DC /* DocumentViewController.m */,
+				D50BA50C15042634003D88DC /* DocumentViewController.xib */,
+				D5ED17E415013C1400D78E99 /* Supporting Files */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		D53DB58B151D0C81003061B1 /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+				D54466A2150AC50600BDAE22 /* MiniZip */,
+				D5446692150AC4CC00BDAE22 /* Objective-Zip */,
+				D50BA4F81503C5F7003D88DC /* MACollectionUtilities */,
+			);
+			name = "Third-Party";
 			sourceTree = "<group>";
 		};
 		D5446692150AC4CC00BDAE22 /* Objective-Zip */ = {
@@ -248,11 +274,10 @@
 		D5ED17CE15013C1300D78E99 = {
 			isa = PBXGroup;
 			children = (
-				D54466A2150AC50600BDAE22 /* MiniZip */,
-				D5446692150AC4CC00BDAE22 /* Objective-Zip */,
-				D50BA4F81503C5F7003D88DC /* MACollectionUtilities */,
+				D53DB58B151D0C81003061B1 /* Third-Party */,
 				D5ED17E315013C1400D78E99 /* iGrep */,
 				D56308451503B56700F3187F /* iGrepTests */,
+				D53DB58A151D0C7B003061B1 /* Demo */,
 				D5ED17DC15013C1400D78E99 /* Frameworks */,
 				D5ED17DA15013C1400D78E99 /* Products */,
 			);
@@ -284,23 +309,14 @@
 		D5ED17E315013C1400D78E99 /* iGrep */ = {
 			isa = PBXGroup;
 			children = (
-				D56308201503ACE000F3187F /* Document.h */,
-				D56308211503ACE000F3187F /* Document.m */,
-				D50BA4FE1503CA42003D88DC /* DocumentsIndex.h */,
-				D50BA4FF1503CA42003D88DC /* DocumentsIndex.m */,
-				D5B73C4E15080FE800E34F33 /* SqliteDocumentsIndex.h */,
-				D5B73C4F15080FE800E34F33 /* SqliteDocumentsIndex.m */,
-				D5B73C56150816B700E34F33 /* RawFileIndex.h */,
-				D5B73C57150816B700E34F33 /* RawFileIndex.m */,
-				D5ED17EC15013C1400D78E99 /* AppDelegate.h */,
-				D5ED17ED15013C1400D78E99 /* AppDelegate.m */,
-				D5ED17EF15013C1400D78E99 /* ViewController.h */,
-				D5ED17F015013C1400D78E99 /* ViewController.m */,
-				D5ED17F215013C1400D78E99 /* ViewController.xib */,
-				D50BA50A15042633003D88DC /* DocumentViewController.h */,
-				D50BA50B15042633003D88DC /* DocumentViewController.m */,
-				D50BA50C15042634003D88DC /* DocumentViewController.xib */,
-				D5ED17E415013C1400D78E99 /* Supporting Files */,
+				D56308201503ACE000F3187F /* CXDocument.h */,
+				D56308211503ACE000F3187F /* CXDocument.m */,
+				D50BA4FE1503CA42003D88DC /* CXDocumentsIndex.h */,
+				D50BA4FF1503CA42003D88DC /* CXDocumentsIndex.m */,
+				D5B73C4E15080FE800E34F33 /* CXSqliteDocumentsIndex.h */,
+				D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */,
+				D5B73C56150816B700E34F33 /* CXRawFileIndex.h */,
+				D5B73C57150816B700E34F33 /* CXRawFileIndex.m */,
 			);
 			path = iGrep;
 			sourceTree = "<group>";
@@ -316,6 +332,7 @@
 				D5ED17EB15013C1400D78E99 /* iGrep-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = iGrep;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,13 +499,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D50BA4FD1503C7A9003D88DC /* MACollectionUtilities.m in Sources */,
-				D56308551503B86500F3187F /* Document.m in Sources */,
+				D56308551503B86500F3187F /* CXDocument.m in Sources */,
 				D56308541503B58100F3187F /* DocumentTests.m in Sources */,
-				D50BA5011503CA42003D88DC /* DocumentsIndex.m in Sources */,
+				D50BA5011503CA42003D88DC /* CXDocumentsIndex.m in Sources */,
 				D50BA5041503CA70003D88DC /* DocumentsIndexTests.m in Sources */,
-				D5B73C5115080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */,
+				D5B73C5115080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */,
 				D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */,
-				D5B73C59150816B700E34F33 /* RawFileIndex.m in Sources */,
+				D5B73C59150816B700E34F33 /* CXRawFileIndex.m in Sources */,
 				D5B73C5C1508231D00E34F33 /* RawFileIndexTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,12 +517,12 @@
 				D5ED17EA15013C1400D78E99 /* main.m in Sources */,
 				D5ED17EE15013C1400D78E99 /* AppDelegate.m in Sources */,
 				D5ED17F115013C1400D78E99 /* ViewController.m in Sources */,
-				D56308221503ACE000F3187F /* Document.m in Sources */,
+				D56308221503ACE000F3187F /* CXDocument.m in Sources */,
 				D50BA4FC1503C630003D88DC /* MACollectionUtilities.m in Sources */,
-				D50BA5001503CA42003D88DC /* DocumentsIndex.m in Sources */,
+				D50BA5001503CA42003D88DC /* CXDocumentsIndex.m in Sources */,
 				D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */,
-				D5B73C5015080FE800E34F33 /* SqliteDocumentsIndex.m in Sources */,
-				D5B73C58150816B700E34F33 /* RawFileIndex.m in Sources */,
+				D5B73C5015080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */,
+				D5B73C58150816B700E34F33 /* CXRawFileIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +559,7 @@
 				D5ED17F315013C1400D78E99 /* en */,
 			);
 			name = ViewController.xib;
+			path = iGrep;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

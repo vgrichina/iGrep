@@ -1,12 +1,12 @@
 //
-//  Document.m
-//  DocumentSearch
+//  CXDocument.m
+//  iGrep
 //
 //  Created by Vladimir Grichina on 04.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "Document.h"
+#import "CXDocument.h"
 
 #import "MACollectionUtilities.h"
 
@@ -14,7 +14,7 @@
 #import "FileInZipInfo.h"
 #import "ZipReadStream.h"
 
-@implementation Document
+@implementation CXDocument
 
 @synthesize uri = _uri;
 

@@ -1,9 +1,9 @@
 //
 //  DocumentsIndexTests.m
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 04.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "DocumentsIndexTests.h"
@@ -14,9 +14,9 @@
 
 - (void)doTestAddDocument
 {
-    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+    NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
-    Document *document = [[Document alloc] initWithURI:url];
+    CXDocument *document = [[CXDocument alloc] initWithURI:url];
 
     STAssertTrue([self.index addDocument:document], @"Document added");
     STAssertFalse([self.index addDocument:document], @"Document added");
@@ -24,10 +24,10 @@
 
 - (void)doTestAddDocumentFromZip
 {
-    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+    NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir.zip"] absoluteString];
     url = [NSString stringWithFormat:@"zip:%@!%@", url, @"maildir/mcconnell-m/_sent_mail/1."];
-    Document *document = [[Document alloc] initWithURI:url];
+    CXDocument *document = [[CXDocument alloc] initWithURI:url];
 
     STAssertTrue([self.index addDocument:document], @"Document added");
     STAssertFalse([self.index addDocument:document], @"Document added");
@@ -37,7 +37,7 @@
 {
     [self doTestAddDocument];
 
-    STAssertEquals([self.index searchDocuments:@"wow" order:DocumentsIndexSearchOrderDate].count, 1u, @"Single document found");
+    STAssertEquals([self.index searchDocuments:@"wow" order:CXDocumentsIndexSearchOrderDate].count, 1u, @"Single document found");
 }
 
 - (void)doTestPerformance
@@ -47,7 +47,7 @@
     NSLog(@"Running testPerformance");
 
     // Index documents
-    NSString *mailPath = [[[NSBundle bundleForClass:[DocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/"];
+    NSString *mailPath = [[[NSBundle bundleForClass:[CXDocumentsIndex class]] bundlePath] stringByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/"];
     NSEnumerator *filesEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:mailPath];
 
     int totalIndexed = 0;
@@ -61,7 +61,7 @@
             totalIndexed++;
 
             @autoreleasepool {
-                Document *doc = [[Document alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
+                CXDocument *doc = [[CXDocument alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
                 STAssertTrue([self.index addDocument:doc], @"Indexed successfully");
             }
         }
@@ -79,14 +79,14 @@
     // tf*idf
     for (NSString *query in queries) {
         NSLog(@"Searching: %@", query);
-        NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderTfIdf];
+        NSArray *documents = [self.index searchDocuments:query order:CXDocumentsIndexSearchOrderTfIdf];
         STAssertTrue(documents.count > 0, @"Should find some documents for query: %@", query);
     }
 
     // Time sort
     for (NSString *query in queries) {
         NSLog(@"Searching: %@", query);
-        NSArray *documents = [self.index searchDocuments:query order:DocumentsIndexSearchOrderDate];
+        NSArray *documents = [self.index searchDocuments:query order:CXDocumentsIndexSearchOrderDate];
         STAssertTrue(documents.count > 0, @"Should find some documents for query: %@", query);
     }
 }

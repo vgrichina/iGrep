@@ -1,9 +1,9 @@
 //
 //  DocumentViewController.m
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 05.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "DocumentViewController.h"

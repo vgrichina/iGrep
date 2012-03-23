@@ -1,9 +1,9 @@
 //
 //  DocumentTests.m
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 04.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "DocumentTests.h"
@@ -18,9 +18,9 @@
 {
     sqlite3_config(SQLITE_CONFIG_SERIALIZED);
 
-    NSString *url = [[[[NSBundle bundleForClass:[Document class]] bundleURL]
+    NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
-    self.document = [[Document alloc] initWithURI:url];
+    self.document = [[CXDocument alloc] initWithURI:url];
 }
 
 - (void)testContent

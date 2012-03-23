@@ -1,18 +1,18 @@
 //
-//  SqliteDocumentsIndex.h
-//  DocumentSearch
+//  CXSqliteDocumentsIndex.h
+//  iGrep
 //
 //  Created by Vladimir Grichina on 07.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "DocumentsIndex.h"
+#import "CXDocumentsIndex.h"
 
 #import <sqlite3.h>
 
-@interface SqliteDocumentsIndex : DocumentsIndex {
+@interface CXSqliteDocumentsIndex : CXDocumentsIndex {
     sqlite3 *db;
     sqlite3_stmt *selectTermStmt;
     sqlite3_stmt *insertTermStmt;
