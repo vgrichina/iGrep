@@ -9,6 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 #import "CXDocumentsIndex.h"
+#import "CXMailDocument.h"
 
 @interface DocumentsIndexTests : SenTestCase
 

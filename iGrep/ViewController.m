@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+#import "CXMailDocument.h"
 #import "CXRawFileIndex.h"
 
 #import "ZipFile.h"
@@ -42,7 +43,7 @@
             ZipReadStream *stream = [zipFile readCurrentFileInZip];
             NSData *fileData = [stream readDataOfLength:fileInfo.length];
 
-            CXDocument *doc = [[CXDocument alloc] initWithURI:uri data:fileData];
+            CXMailDocument *doc = [[CXMailDocument alloc] initWithURI:uri data:fileData];
 
             //NSLog(@"Unzip time: %.3f", -[date timeIntervalSinceNow]);
 

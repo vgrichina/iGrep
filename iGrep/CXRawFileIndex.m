@@ -154,8 +154,10 @@ struct term_doc {
     return YES;
 }
 
-- (BOOL)addDocument:(CXDocument *)document
+- (BOOL)addDocument:(id<CXDocument>)document
 {
+    [super addDocument:document];
+
     @synchronized(documents) {
         if ([documents containsObject:document.uri]) {
             return NO;
@@ -215,11 +217,11 @@ struct term_doc {
     } while (YES);
 }
 
-- (CXDocument *)documentWithId:(int)docId
+- (id<CXDocument>)documentWithId:(int)docId
 {
-    return [[CXDocument alloc] initWithURI:[documents objectAtIndex:docId]
-                                   title:[documentTitles objectAtIndex:docId]
-                                    date:[documentDates objectAtIndex:docId]];
+    return [[self.documentClass alloc] initWithURI:[documents objectAtIndex:docId]
+                                             title:[documentTitles objectAtIndex:docId]
+                                              date:[documentDates objectAtIndex:docId]];
 }
 
 - (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(CXDocumentsIndexSearchOrder)order

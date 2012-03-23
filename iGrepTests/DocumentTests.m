@@ -20,7 +20,7 @@
 
     NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
-    self.document = [[CXDocument alloc] initWithURI:url];
+    self.document = [[CXMailDocument alloc] initWithURI:url];
 }
 
 - (void)testContent

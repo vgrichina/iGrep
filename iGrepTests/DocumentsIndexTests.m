@@ -16,7 +16,7 @@
 {
     NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
-    CXDocument *document = [[CXDocument alloc] initWithURI:url];
+    CXMailDocument *document = [[CXMailDocument alloc] initWithURI:url];
 
     STAssertTrue([self.index addDocument:document], @"Document added");
     STAssertFalse([self.index addDocument:document], @"Document added");
@@ -27,7 +27,7 @@
     NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir.zip"] absoluteString];
     url = [NSString stringWithFormat:@"zip:%@!%@", url, @"maildir/mcconnell-m/_sent_mail/1."];
-    CXDocument *document = [[CXDocument alloc] initWithURI:url];
+    CXMailDocument *document = [[CXMailDocument alloc] initWithURI:url];
 
     STAssertTrue([self.index addDocument:document], @"Document added");
     STAssertFalse([self.index addDocument:document], @"Document added");
@@ -61,7 +61,7 @@
             totalIndexed++;
 
             @autoreleasepool {
-                CXDocument *doc = [[CXDocument alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
+                CXMailDocument *doc = [[CXMailDocument alloc] initWithURI:[[NSURL fileURLWithPath:file] absoluteString]];
                 STAssertTrue([self.index addDocument:doc], @"Indexed successfully");
             }
         }

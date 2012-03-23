@@ -105,8 +105,10 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
     sqlite3_close(db);
 }
 
-- (BOOL)addDocument:(CXDocument *)document
+- (BOOL)addDocument:(id<CXDocument>)document
 {
+    [super addDocument:document];
+
     // Start transaction
     if (!Exec(db, @"BEGIN", nop)) {
         return NO;
@@ -282,7 +284,7 @@ static BOOL Exec(sqlite3 *db, NSString *sql, RowBlock block)
          [NSString stringWithUTF8String:columnValues[0]]];
         return 0;
     })) {
-        return MAP(uris, [[CXDocument alloc] initWithURI:obj]);
+        return MAP(uris, [[self.documentClass alloc] initWithURI:obj]);
     } else {
         return nil;
     }

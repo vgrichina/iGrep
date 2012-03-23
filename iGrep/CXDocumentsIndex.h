@@ -17,7 +17,9 @@ typedef enum {
 
 @interface CXDocumentsIndex : NSObject
 
-- (BOOL)addDocument:(CXDocument *)document;
+@property(assign) Class documentClass;
+
+- (BOOL)addDocument:(id<CXDocument>)document;
 
 - (NSArray *)searchDocuments:(NSString *)query order:(CXDocumentsIndexSearchOrder)order;
 

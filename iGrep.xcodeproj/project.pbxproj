@@ -15,6 +15,8 @@
 		D50BA5051503CB48003D88DC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED18071501671700D78E99 /* libsqlite3.dylib */; };
 		D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50BA50B15042633003D88DC /* DocumentViewController.m */; };
 		D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50BA50C15042634003D88DC /* DocumentViewController.xib */; };
+		D53DB58E151D1A76003061B1 /* CXMailDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB58D151D1A76003061B1 /* CXMailDocument.m */; };
+		D53DB58F151D1A81003061B1 /* CXMailDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB58D151D1A76003061B1 /* CXMailDocument.m */; };
 		D5446691150AC4C100BDAE22 /* maildir.zip in Resources */ = {isa = PBXBuildFile; fileRef = D5446690150AC4C100BDAE22 /* maildir.zip */; };
 		D54466B4150AC59800BDAE22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
 		D54466BE150AC5C500BDAE22 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A3150AC51400BDAE22 /* ioapi.c */; };
@@ -85,6 +87,8 @@
 		D50BA50A15042633003D88DC /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = iGrep/DocumentViewController.h; sourceTree = "<group>"; };
 		D50BA50B15042633003D88DC /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentViewController.m; path = iGrep/DocumentViewController.m; sourceTree = "<group>"; };
 		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DocumentViewController.xib; path = iGrep/DocumentViewController.xib; sourceTree = "<group>"; };
+		D53DB58C151D1A76003061B1 /* CXMailDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMailDocument.h; sourceTree = "<group>"; };
+		D53DB58D151D1A76003061B1 /* CXMailDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMailDocument.m; sourceTree = "<group>"; };
 		D5446690150AC4C100BDAE22 /* maildir.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = maildir.zip; sourceTree = SOURCE_ROOT; };
 		D5446693150AC4F500BDAE22 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInZipInfo.h; path = "objective-zip/Objective-Zip/FileInZipInfo.h"; sourceTree = "<group>"; };
 		D5446694150AC4F500BDAE22 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInZipInfo.m; path = "objective-zip/Objective-Zip/FileInZipInfo.m"; sourceTree = "<group>"; };
@@ -317,6 +321,8 @@
 				D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */,
 				D5B73C56150816B700E34F33 /* CXRawFileIndex.h */,
 				D5B73C57150816B700E34F33 /* CXRawFileIndex.m */,
+				D53DB58C151D1A76003061B1 /* CXMailDocument.h */,
+				D53DB58D151D1A76003061B1 /* CXMailDocument.m */,
 			);
 			path = iGrep;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				D5B73C55150814AE00E34F33 /* SqliteIndexTests.m in Sources */,
 				D5B73C59150816B700E34F33 /* CXRawFileIndex.m in Sources */,
 				D5B73C5C1508231D00E34F33 /* RawFileIndexTests.m in Sources */,
+				D53DB58F151D1A81003061B1 /* CXMailDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +530,7 @@
 				D50BA50D15042634003D88DC /* DocumentViewController.m in Sources */,
 				D5B73C5015080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */,
 				D5B73C58150816B700E34F33 /* CXRawFileIndex.m in Sources */,
+				D53DB58E151D1A76003061B1 /* CXMailDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

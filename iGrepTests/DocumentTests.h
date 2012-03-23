@@ -9,9 +9,10 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 #import "CXDocument.h"
+#import "CXMailDocument.h"
 
 @interface DocumentTests : SenTestCase
 
-@property(strong) CXDocument *document;
+@property(strong) CXMailDocument *document;
 
 @end
