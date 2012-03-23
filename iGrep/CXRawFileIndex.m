@@ -1,12 +1,12 @@
 //
-//  RawFileIndex.m
-//  DocumentSearch
+//  CXRawFileIndex.m
+//  iGrep
 //
 //  Created by Vladimir Grichina on 08.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "RawFileIndex.h"
+#import "CXRawFileIndex.h"
 
 #include <sys/mman.h>
 #include <sys/types.h>
@@ -30,7 +30,7 @@ struct term_doc {
     int occurences;
 };
 
-@implementation RawFileIndex
+@implementation CXRawFileIndex
 
 - (id)initWithFile:(NSString *)file
 {
@@ -154,7 +154,7 @@ struct term_doc {
     return YES;
 }
 
-- (BOOL)addDocument:(Document *)document
+- (BOOL)addDocument:(CXDocument *)document
 {
     @synchronized(documents) {
         if ([documents containsObject:document.uri]) {
@@ -215,14 +215,14 @@ struct term_doc {
     } while (YES);
 }
 
-- (Document *)documentWithId:(int)docId
+- (CXDocument *)documentWithId:(int)docId
 {
-    return [[Document alloc] initWithURI:[documents objectAtIndex:docId]
+    return [[CXDocument alloc] initWithURI:[documents objectAtIndex:docId]
                                    title:[documentTitles objectAtIndex:docId]
                                     date:[documentDates objectAtIndex:docId]];
 }
 
-- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
+- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(CXDocumentsIndexSearchOrder)order
 {
     int limit = 30;
 

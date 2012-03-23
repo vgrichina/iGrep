@@ -1,14 +1,14 @@
 //
 //  SqliteIndexTests.m
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 08.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "SqliteIndexTests.h"
 
-#import "SqliteDocumentsIndex.h"
+#import "CXSqliteDocumentsIndex.h"
 
 @implementation SqliteIndexTests
 
@@ -16,7 +16,7 @@
 {
     NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
     [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
-    self.index = [[SqliteDocumentsIndex alloc] initWithDatabase:dbPath];
+    self.index = [[CXSqliteDocumentsIndex alloc] initWithDatabase:dbPath];
     NSLog(@"Database path: %@", dbPath);
 }
 

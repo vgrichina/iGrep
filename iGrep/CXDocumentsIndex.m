@@ -1,24 +1,24 @@
 //
-//  DocumentsIndex.m
-//  DocumentSearch
+//  CXDocumentsIndex.m
+//  iGrep
 //
 //  Created by Vladimir Grichina on 04.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "DocumentsIndex.h"
+#import "CXDocumentsIndex.h"
 
 #import "MACollectionUtilities.h"
 
-@implementation DocumentsIndex
+@implementation CXDocumentsIndex
 
-- (BOOL)addDocument:(Document *)document
+- (BOOL)addDocument:(CXDocument *)document
 {
     // Override in child classes
     return NO;
 }
 
-- (NSArray *)searchDocuments:(NSString *)query order:(DocumentsIndexSearchOrder)order
+- (NSArray *)searchDocuments:(NSString *)query order:(CXDocumentsIndexSearchOrder)order
 {
     // Parse query
     NSArray *queryTerms = MAP([query componentsSeparatedByCharactersInSet:
@@ -31,7 +31,7 @@
     return [self searchDocumentsWithTerms:queryTerms order:order];
 }
 
-- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(DocumentsIndexSearchOrder)order
+- (NSArray *)searchDocumentsWithTerms:(NSArray *)queryTerms order:(CXDocumentsIndexSearchOrder)order
 {
     // Override in child classes
     return [NSArray array];

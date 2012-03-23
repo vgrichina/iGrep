@@ -1,14 +1,14 @@
 //
 //  RawFileIndex.m
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 08.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "RawFileIndexTests.h"
 
-#import "RawFileIndex.h"
+#import "CXRawFileIndex.h"
 
 @implementation RawFileIndexTests
 
@@ -16,7 +16,7 @@
 {
     NSString *indexPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.bin"];
     [[NSFileManager defaultManager] removeItemAtPath:indexPath error:NULL];
-    self.index = [[RawFileIndex alloc] initWithFile:indexPath];
+    self.index = [[CXRawFileIndex alloc] initWithFile:indexPath];
     NSLog(@"Index path: %@", indexPath);
 }
 

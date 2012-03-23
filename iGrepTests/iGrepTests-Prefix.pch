@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'DocumentSearchTests' target in the 'DocumentSearchTests' project
+// Prefix header for all source files of the 'iGrepTests' target in the 'iGrepTests' project
 //
 
 #ifdef __OBJC__

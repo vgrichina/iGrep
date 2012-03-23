@@ -3,12 +3,12 @@
 //  Autocomplete
 //
 //  Created by Владимир Гричина on 02.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import "ViewController.h"
 
-#import "RawFileIndex.h"
+#import "CXRawFileIndex.h"
 
 #import "ZipFile.h"
 #import "FileInZipInfo.h"
@@ -25,7 +25,7 @@
     [[NSFileManager defaultManager] removeItemAtPath:indexPath error:NULL];
     NSLog(@"Index path: %@", indexPath);
 
-    self.index = [[RawFileIndex alloc] initWithFile:indexPath];
+    self.index = [[CXRawFileIndex alloc] initWithFile:indexPath];
 
     NSString *mailPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"maildir.zip"];
     ZipFile *zipFile = [[ZipFile alloc] initWithFileName:mailPath mode:ZipFileModeUnzip];
@@ -42,7 +42,7 @@
             ZipReadStream *stream = [zipFile readCurrentFileInZip];
             NSData *fileData = [stream readDataOfLength:fileInfo.length];
 
-            Document *doc = [[Document alloc] initWithURI:uri data:fileData];
+            CXDocument *doc = [[CXDocument alloc] initWithURI:uri data:fileData];
 
             //NSLog(@"Unzip time: %.3f", -[date timeIntervalSinceNow]);
 
@@ -135,7 +135,7 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 
-	Document *document;
+	CXDocument *document;
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
         document = [self.filteredListContent objectAtIndex:indexPath.row];
     }
@@ -148,7 +148,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Document *document = [self.filteredListContent objectAtIndex:indexPath.row];
+    CXDocument *document = [self.filteredListContent objectAtIndex:indexPath.row];
     self.documentViewController.document = document;
     [self.navigationController pushViewController:self.documentViewController animated:YES];
 }
@@ -156,7 +156,7 @@
 #pragma mark -
 #pragma mark Content Filtering
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(DocumentsIndexSearchOrder)scope
+- (void)filterContentForSearchText:(NSString*)searchText scope:(CXDocumentsIndexSearchOrder)scope
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"Start filtering: %@", searchText);

@@ -1,14 +1,14 @@
 //
-//  RawFileIndex.h
-//  DocumentSearch
+//  CXRawFileIndex.h
+//  iGrep
 //
 //  Created by Vladimir Grichina on 08.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "DocumentsIndex.h"
+#import "CXDocumentsIndex.h"
 
-@interface RawFileIndex : DocumentsIndex {
+@interface CXRawFileIndex : CXDocumentsIndex {
     int fd;
     void *data;
     void *writePosition;

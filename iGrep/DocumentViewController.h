@@ -1,19 +1,19 @@
 //
 //  DocumentViewController.h
-//  DocumentSearch
+//  iGrep
 //
 //  Created by Vladimir Grichina on 05.03.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "Document.h"
+#import "CXDocument.h"
 
 @interface DocumentViewController : UIViewController
 
 @property(weak) IBOutlet UITextView *textView;
 
-@property(strong) Document *document;
+@property(strong) CXDocument *document;
 
 @end
