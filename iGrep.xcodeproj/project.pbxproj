@@ -109,10 +109,10 @@
 		D56308211503ACE000F3187F /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		D56308231503B52100F3187F /* maildir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maildir; sourceTree = SOURCE_ROOT; };
 		D563082B1503B54100F3187F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		D56308411503B56700F3187F /* DocumentSearchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentSearchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D56308471503B56700F3187F /* DocumentSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentSearchTests-Info.plist"; sourceTree = "<group>"; };
+		D56308411503B56700F3187F /* iGrepTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGrepTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56308471503B56700F3187F /* iGrepTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iGrepTests-Info.plist"; sourceTree = "<group>"; };
 		D56308491503B56700F3187F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D563084E1503B56700F3187F /* DocumentSearchTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocumentSearchTests-Prefix.pch"; sourceTree = "<group>"; };
+		D563084E1503B56700F3187F /* iGrepTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iGrepTests-Prefix.pch"; sourceTree = "<group>"; };
 		D56308521503B58100F3187F /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTests.h; sourceTree = "<group>"; };
 		D56308531503B58100F3187F /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTests.m; sourceTree = "<group>"; };
 		D57F8567150ACFB5004A1C81 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -124,14 +124,14 @@
 		D5B73C57150816B700E34F33 /* RawFileIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndex.m; sourceTree = "<group>"; };
 		D5B73C5A1508231D00E34F33 /* RawFileIndexTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawFileIndexTests.h; sourceTree = "<group>"; };
 		D5B73C5B1508231D00E34F33 /* RawFileIndexTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawFileIndexTests.m; sourceTree = "<group>"; };
-		D5ED17D915013C1400D78E99 /* DocumentSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5ED17D915013C1400D78E99 /* iGrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5ED17DD15013C1400D78E99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D5ED17DF15013C1400D78E99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5ED17E115013C1400D78E99 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D5ED17E515013C1400D78E99 /* DocumentSearch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentSearch-Info.plist"; sourceTree = "<group>"; };
+		D5ED17E515013C1400D78E99 /* iGrep-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iGrep-Info.plist"; sourceTree = "<group>"; };
 		D5ED17E715013C1400D78E99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5ED17E915013C1400D78E99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D5ED17EB15013C1400D78E99 /* DocumentSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocumentSearch-Prefix.pch"; sourceTree = "<group>"; };
+		D5ED17EB15013C1400D78E99 /* iGrep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iGrep-Prefix.pch"; sourceTree = "<group>"; };
 		D5ED17EC15013C1400D78E99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D5ED17ED15013C1400D78E99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D5ED17EF15013C1400D78E99 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 			name = MiniZip;
 			sourceTree = "<group>";
 		};
-		D56308451503B56700F3187F /* DocumentSearchTests */ = {
+		D56308451503B56700F3187F /* iGrepTests */ = {
 			isa = PBXGroup;
 			children = (
 				D56308461503B56700F3187F /* Supporting Files */,
@@ -232,15 +232,15 @@
 				D5B73C5A1508231D00E34F33 /* RawFileIndexTests.h */,
 				D5B73C5B1508231D00E34F33 /* RawFileIndexTests.m */,
 			);
-			path = DocumentSearchTests;
+			path = iGrepTests;
 			sourceTree = "<group>";
 		};
 		D56308461503B56700F3187F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D56308471503B56700F3187F /* DocumentSearchTests-Info.plist */,
+				D56308471503B56700F3187F /* iGrepTests-Info.plist */,
 				D56308481503B56700F3187F /* InfoPlist.strings */,
-				D563084E1503B56700F3187F /* DocumentSearchTests-Prefix.pch */,
+				D563084E1503B56700F3187F /* iGrepTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,8 +251,8 @@
 				D54466A2150AC50600BDAE22 /* MiniZip */,
 				D5446692150AC4CC00BDAE22 /* Objective-Zip */,
 				D50BA4F81503C5F7003D88DC /* MACollectionUtilities */,
-				D5ED17E315013C1400D78E99 /* DocumentSearch */,
-				D56308451503B56700F3187F /* DocumentSearchTests */,
+				D5ED17E315013C1400D78E99 /* iGrep */,
+				D56308451503B56700F3187F /* iGrepTests */,
 				D5ED17DC15013C1400D78E99 /* Frameworks */,
 				D5ED17DA15013C1400D78E99 /* Products */,
 			);
@@ -261,8 +261,8 @@
 		D5ED17DA15013C1400D78E99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5ED17D915013C1400D78E99 /* DocumentSearch.app */,
-				D56308411503B56700F3187F /* DocumentSearchTests.octest */,
+				D5ED17D915013C1400D78E99 /* iGrep.app */,
+				D56308411503B56700F3187F /* iGrepTests.octest */,
 				D54466B3150AC59800BDAE22 /* libObjectiveZip.a */,
 			);
 			name = Products;
@@ -281,7 +281,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5ED17E315013C1400D78E99 /* DocumentSearch */ = {
+		D5ED17E315013C1400D78E99 /* iGrep */ = {
 			isa = PBXGroup;
 			children = (
 				D56308201503ACE000F3187F /* Document.h */,
@@ -302,7 +302,7 @@
 				D50BA50C15042634003D88DC /* DocumentViewController.xib */,
 				D5ED17E415013C1400D78E99 /* Supporting Files */,
 			);
-			path = DocumentSearch;
+			path = iGrep;
 			sourceTree = "<group>";
 		};
 		D5ED17E415013C1400D78E99 /* Supporting Files */ = {
@@ -310,10 +310,10 @@
 			children = (
 				D5446690150AC4C100BDAE22 /* maildir.zip */,
 				D56308231503B52100F3187F /* maildir */,
-				D5ED17E515013C1400D78E99 /* DocumentSearch-Info.plist */,
+				D5ED17E515013C1400D78E99 /* iGrep-Info.plist */,
 				D5ED17E615013C1400D78E99 /* InfoPlist.strings */,
 				D5ED17E915013C1400D78E99 /* main.m */,
-				D5ED17EB15013C1400D78E99 /* DocumentSearch-Prefix.pch */,
+				D5ED17EB15013C1400D78E99 /* iGrep-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -348,9 +348,9 @@
 			productReference = D54466B3150AC59800BDAE22 /* libObjectiveZip.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D56308401503B56700F3187F /* DocumentSearchTests */ = {
+		D56308401503B56700F3187F /* iGrepTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "DocumentSearchTests" */;
+			buildConfigurationList = D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "iGrepTests" */;
 			buildPhases = (
 				D563083C1503B56700F3187F /* Sources */,
 				D563083D1503B56700F3187F /* Frameworks */,
@@ -361,14 +361,14 @@
 			);
 			dependencies = (
 			);
-			name = DocumentSearchTests;
+			name = iGrepTests;
 			productName = DocumentSearchTests;
-			productReference = D56308411503B56700F3187F /* DocumentSearchTests.octest */;
+			productReference = D56308411503B56700F3187F /* iGrepTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		D5ED17D815013C1400D78E99 /* DocumentSearch */ = {
+		D5ED17D815013C1400D78E99 /* iGrep */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5ED17F715013C1400D78E99 /* Build configuration list for PBXNativeTarget "DocumentSearch" */;
+			buildConfigurationList = D5ED17F715013C1400D78E99 /* Build configuration list for PBXNativeTarget "iGrep" */;
 			buildPhases = (
 				D5ED17D515013C1400D78E99 /* Sources */,
 				D5ED17D615013C1400D78E99 /* Frameworks */,
@@ -379,9 +379,9 @@
 			dependencies = (
 				D54466D1150AC8BB00BDAE22 /* PBXTargetDependency */,
 			);
-			name = DocumentSearch;
+			name = iGrep;
 			productName = Autocomplete;
-			productReference = D5ED17D915013C1400D78E99 /* DocumentSearch.app */;
+			productReference = D5ED17D915013C1400D78E99 /* iGrep.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +392,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = D5ED17D315013C1300D78E99 /* Build configuration list for PBXProject "DocumentSearch" */;
+			buildConfigurationList = D5ED17D315013C1300D78E99 /* Build configuration list for PBXProject "iGrep" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -404,8 +404,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5ED17D815013C1400D78E99 /* DocumentSearch */,
-				D56308401503B56700F3187F /* DocumentSearchTests */,
+				D5ED17D815013C1400D78E99 /* iGrep */,
+				D56308401503B56700F3187F /* iGrepTests */,
 				D54466B2150AC59800BDAE22 /* ObjectiveZip */,
 			);
 		};
@@ -581,9 +581,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DocumentSearchTests/DocumentSearchTests-Prefix.pch";
-				INFOPLIST_FILE = "DocumentSearchTests/DocumentSearchTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iGrepTests/iGrepTests-Prefix.pch";
+				INFOPLIST_FILE = "iGrepTests/iGrepTests-Info.plist";
+				PRODUCT_NAME = iGrepTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -596,9 +596,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DocumentSearchTests/DocumentSearchTests-Prefix.pch";
-				INFOPLIST_FILE = "DocumentSearchTests/DocumentSearchTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iGrepTests/iGrepTests-Prefix.pch";
+				INFOPLIST_FILE = "iGrepTests/iGrepTests-Info.plist";
+				PRODUCT_NAME = iGrepTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -652,10 +652,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DocumentSearch/DocumentSearch-Prefix.pch";
-				INFOPLIST_FILE = "DocumentSearch/DocumentSearch-Info.plist";
+				GCC_PREFIX_HEADER = "iGrep/iGrep-Prefix.pch";
+				INFOPLIST_FILE = "iGrep/iGrep-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = DocumentSearch;
+				PRODUCT_NAME = iGrep;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -665,10 +665,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DocumentSearch/DocumentSearch-Prefix.pch";
-				INFOPLIST_FILE = "DocumentSearch/DocumentSearch-Info.plist";
+				GCC_PREFIX_HEADER = "iGrep/iGrep-Prefix.pch";
+				INFOPLIST_FILE = "iGrep/iGrep-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = DocumentSearch;
+				PRODUCT_NAME = iGrep;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -686,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "DocumentSearchTests" */ = {
+		D563084F1503B56700F3187F /* Build configuration list for PBXNativeTarget "iGrepTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D56308501503B56700F3187F /* Debug */,
@@ -695,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5ED17D315013C1300D78E99 /* Build configuration list for PBXProject "DocumentSearch" */ = {
+		D5ED17D315013C1300D78E99 /* Build configuration list for PBXProject "iGrep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5ED17F515013C1400D78E99 /* Debug */,
@@ -704,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5ED17F715013C1400D78E99 /* Build configuration list for PBXNativeTarget "DocumentSearch" */ = {
+		D5ED17F715013C1400D78E99 /* Build configuration list for PBXNativeTarget "iGrep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5ED17F815013C1400D78E99 /* Debug */,
