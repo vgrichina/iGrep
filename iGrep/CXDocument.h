@@ -28,11 +28,11 @@
 @interface CXDocument : NSObject<CXDocument> {
     NSString *_uri;
 
-    NSString *_content;
     NSDate *_date;
+    NSString *_title;
+    NSString *_content;
     NSArray *_tokens;
     NSDictionary *_terms;
-    NSString *_title;
 }
 
 @end

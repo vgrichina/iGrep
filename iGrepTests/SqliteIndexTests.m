@@ -14,6 +14,8 @@
 
 - (void)setUp
 {
+    sqlite3_config(SQLITE_CONFIG_SERIALIZED);
+
     NSString *dbPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"index.sqlite"];
     [[NSFileManager defaultManager] removeItemAtPath:dbPath error:NULL];
     self.index = [[CXSqliteDocumentsIndex alloc] initWithDatabase:dbPath];
