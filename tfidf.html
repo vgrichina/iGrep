@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" class="client-nojs" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>tf*idf - Wikipedia, the free encyclopedia</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="generator" content="MediaWiki 1.19wmf1" />
+        <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Tf*idf&amp;action=edit" />
+        <link rel="edit" title="Edit this page" href="/w/index.php?title=Tf*idf&amp;action=edit" />
+        <link rel="apple-touch-icon" href="//en.wikipedia.org/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+        <link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+        <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+        <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+        <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.teahouse%7Cext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+        <meta name="ResourceLoaderDynamicStyles" content="" />
+        <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+        <style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+            
+            /* cache key: enwiki:resourceloader:filter:minify-css:7:c88e2bcd56513749bec09a7e29cb3ffa */</style>
+        
+        <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+        <script type="text/javascript">if(window.mw){
+            mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tf*idf","wgTitle":"Tf*idf","wgCurRevisionId":480842346,"wgArticleId":2057290,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Computer science articles needing expert attention","Articles needing expert attention from February 2012","All articles needing expert attention","Information retrieval","Artificial intelligence applications","Statistical natural language processing","Ranking functions"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"Tf*idf","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgSearchNamespaces":[0],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"simplesearch":true,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgTrackingToken":"6e79a29a70dba4f64946ceaae4ba58b5","wikilove-recipient":"","wikilove-edittoken":"+\\","wikilove-anon":0,"mbEmailEnabled":true,"mbUserEmail":false,"mbIsEmailConfirmationPending":false,"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikipedia"});
+        }</script><script type="text/javascript">if(window.mw){
+            mw.loader.implement("user.options",function($){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,
+                                                                               "watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikilove-enabled":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"gadget-teahouse":1,"gadget-mySandbox":1});;},{},{});mw.loader.implement("user.tokens",function($){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },{},{});
+            
+            /* cache key: enwiki:resourceloader:filter:minify-js:7:ecf8688ef3caaee08a2939104d260ddb */
+        }</script>
+        <script type="text/javascript">if(window.mw){
+            mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+        }</script>
+        <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.19/vector/csshover.min.htc")}</style><![endif]--></head>
+    <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Tf_idf skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+            <!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+            <!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">
+				<span dir="auto">tf*idf</span>
+			</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+                <!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+                <!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+                <!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+                <!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The <b>tf*idf</b> weight (term frequency–inverse document frequency) is a numerical statistic which reflects how important a word is to a <a href="/wiki/Document" title="Document">document</a> in a collection or <a href="/wiki/Text_corpus" title="Text corpus">corpus</a>. It is often used as a weighting factor in <a href="/wiki/Information_retrieval" title="Information retrieval">information retrieval</a> and <a href="/wiki/Text_mining" title="Text mining">text mining</a>. The tf-idf value increases <a href="/wiki/Proportionality_(mathematics)" title="Proportionality (mathematics)">proportionally</a> to the number of times a word appears in the document, but is offset by the frequency of the word in the corpus, which helps to control for the fact that some words are generally more common than others.</p>
+                    <p>Variations of the tf*idf weighting scheme are often used by <a href="/wiki/Search_engine" title="Search engine" class="mw-redirect">search engines</a> as a central tool in scoring and ranking a document's <a href="/wiki/Relevance_(information_retrieval)" title="Relevance (information retrieval)">relevance</a> given a user <a href="/wiki/Information_retrieval" title="Information retrieval">query</a>. tf*idf can be successfully used for <a href="/wiki/Stop-words" title="Stop-words" class="mw-redirect">stop-words</a> filtering in various subject fields including <a href="/wiki/Automatic_summarization" title="Automatic summarization">text summarization</a> and classification.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></p>
+                    <p>One of the simplest <a href="/wiki/Ranking_function" title="Ranking function">ranking functions</a> is computed by summing the tf*idf for each query term; many more sophisticated ranking functions are variants of this simple model.</p>
+                    <table id="toc" class="toc">
+                        <tr>
+                            <td>
+                                <div id="toctitle">
+                                    <h2>Contents</h2>
+                                </div>
+                                <ul>
+                                    <li class="toclevel-1 tocsection-1"><a href="#Motivation"><span class="tocnumber">1</span> <span class="toctext">Motivation</span></a></li>
+                                    <li class="toclevel-1 tocsection-2"><a href="#Mathematical_details"><span class="tocnumber">2</span> <span class="toctext">Mathematical details</span></a></li>
+                                    <li class="toclevel-1 tocsection-3"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+                                    <li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+                                    <li class="toclevel-1 tocsection-5"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+                                    <li class="toclevel-1 tocsection-6"><a href="#External_links"><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=1" title="Edit section: Motivation">edit</a>]</span> <span class="mw-headline" id="Motivation">Motivation</span></h2>
+                    <p>Suppose we have a set of English text documents and wish to determine which document is most relevant to the query "the brown cow". A simple way to start out is by eliminating documents that do not contain all three words "the", "brown", and "cow", but this still leaves many documents. To further distinguish them, we might count the number of times each term occurs in each document and sum them all together; the number of times a term occurs in a document is called its <i>term frequency</i>.</p>
+                    <p>However, because the term "the" is so common, this will tend to incorrectly emphasize documents which happen to use the word "the" more frequently, without giving enough weight to the more meaningful terms "brown" and "cow". The term "the" is not a good keyword to distinguish relevant and non-relevant documents and terms, unlike the less common words "brown" and "cow". Hence an <i>inverse document frequency</i> factor is incorporated which diminishes the weight of terms that occur very frequently in the collection and increases the weight of terms that occur rarely.</p>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=2" title="Edit section: Mathematical details">edit</a>]</span> <span class="mw-headline" id="Mathematical_details">Mathematical details</span></h2>
+                    <div class="boilerplate metadata plainlinks" id="tfd" style="background-color: transparent; padding: 0; font-size:xx-small; color:#000000; text-align: center; border-bottom:1px solid #AAAAAA;">‹ The <a href="/wiki/Help:Template" title="Help:Template">template</a> below (<i><a href="/wiki/Template:Expert-subject" title="Template:Expert-subject">Expert-subject</a></i>) is being considered for deletion. See <a href="/wiki/Wikipedia:Templates_for_discussion#Template:Expert-subject_and_Template:Expert-subject-multiple" title="Wikipedia:Templates for discussion">templates for discussion</a> to help reach a consensus.›</div>
+                    <table class="metadata plainlinks ambox ambox-content ambox-Expert-subject" style="">
+                        <tr>
+                            <td class="mbox-image">
+                                <div style="width: 52px;"><img alt="" src="//upload.wikimedia.org/wikipedia/en/f/f4/Ambox_content.png" width="40" height="40" /></div>
+                            </td>
+                            <td class="mbox-text" style="">This section <b>needs attention from an expert on the subject</b>. See the <a href="/wiki/Talk:Tf*idf#Normalized_frequencies" title="Talk:Tf*idf">talk page</a> for details. <a href="/wiki/Wikipedia:WikiProject_Computer_science" title="Wikipedia:WikiProject Computer science">WikiProject Computer science</a> or the <a href="/wiki/Portal:Computer_science" title="Portal:Computer science">Computer science Portal</a> may be able to help recruit an expert. <small><i>(February 2012)</i></small></td>
+                        </tr>
+                    </table>
+                    <p>The <b>term count</b> in the given document is simply the number of times a given <a href="/wiki/Term_(language)" title="Term (language)" class="mw-redirect">term</a> appears in that document. This count is usually normalized to prevent a bias towards longer documents (which may have a higher term count regardless of the actual importance of that term in the document) to give a measure of the importance of the term <img class="tex" alt="t" src="//upload.wikimedia.org/wikipedia/en/math/e/3/5/e358efa489f58062f10dd7316b65649e.png" /> within the particular document <img class="tex" alt="d" src="//upload.wikimedia.org/wikipedia/en/math/8/2/7/8277e0910d750195b448797616e091ad.png" />. Thus we have the <b>term frequency</b> <img class="tex" alt="\mathrm{tf}(t,d)" src="//upload.wikimedia.org/wikipedia/en/math/c/9/e/c9e0694d5549f394dea7e4327274d836.png" />. (Many variants have been suggested; see e.g. <a rel="nofollow" class="external text" href="http://nlp.stanford.edu/IR-book/html/htmledition/document-and-query-weighting-schemes-1.html">Manning, Raghavan and Schütze, p. 118.</a>)</p>
+                    <p>The <b>inverse document frequency</b> is a measure of whether the term is common or rare across all documents. It is obtained by dividing the total number of <a href="/wiki/Documents" title="Documents" class="mw-redirect">documents</a> by the number of documents containing the term, and then taking the <a href="/wiki/Logarithm" title="Logarithm">logarithm</a> of that <a href="/wiki/Quotient" title="Quotient">quotient</a>.</p>
+                    <dl>
+                        <dd><img class="tex" alt=" \mathrm{idf}(t, D) =  \log \frac{|D|}{|\{d \in D: t \in d\}|}" src="//upload.wikimedia.org/wikipedia/en/math/6/9/1/691e665ba9ae9448219cedb8365bf961.png" /></dd>
+                    </dl>
+                    <p>with</p>
+                    <ul>
+                        <li><img class="tex" alt=" |D| " src="//upload.wikimedia.org/wikipedia/en/math/a/2/d/a2d2184975ac156e22c2994baecc5a3a.png" />: <a href="/wiki/Cardinality" title="Cardinality">cardinality</a> of D, or the total number of documents in the corpus</li>
+                        <li><img class="tex" alt=" |\{d \in D: t \in d\}| " src="//upload.wikimedia.org/wikipedia/en/math/5/9/e/59eaa13fb80ef382a28fc12c38096df3.png" />&#160;: number of documents where the term <img class="tex" alt=" t " src="//upload.wikimedia.org/wikipedia/en/math/e/3/5/e358efa489f58062f10dd7316b65649e.png" /> appears (i.e., <img class="tex" alt=" \mathrm{tf}(t,d) \neq 0" src="//upload.wikimedia.org/wikipedia/en/math/d/e/b/deb4d9214cdaa3e6cef1330b3687acaf.png" />). If the term is not in the corpus, this will lead to a division-by-zero. It is therefore common to adjust the formula to <img class="tex" alt="1 + |\{d \in D: t \in d\}|" src="//upload.wikimedia.org/wikipedia/en/math/3/2/0/320473fbd8e22432c8120a9040c3e2f9.png" />.</li>
+                    </ul>
+                    <p>Mathematically the base of the log function does not matter and constitutes a constant multiplicative factor towards the overall result.</p>
+                    <p>Then the <b>tf*idf</b> is calculated as</p>
+                    <dl>
+                        <dd><img class="tex" alt="\mathrm{tf*idf}(t,d,D) = \mathrm{tf}(t,d) \times \mathrm{idf}(t, D)" src="//upload.wikimedia.org/wikipedia/en/math/e/c/5/ec563540c487e1f93a1ec5a0831430d3.png" /></dd>
+                    </dl>
+                    <p>A high weight in tf*idf is reached by a high term <a href="/wiki/Frequency_(statistics)" title="Frequency (statistics)">frequency</a> (in the given document) and a low document frequency of the term in the whole collection of documents; the weights hence tend to filter out common terms. Since the ratio inside the idf's log function is always greater than 1, the value of idf (and td-idf) is greater than 0. As a term appears in more documents then ratio inside the log approaches 1 and making idf and td-idf approaching 0. If a 1 is added to the denominator, a term that appears in all documents will have negative idf, and a term that occurs in all but one document will have an idf equal to zero.</p>
+                    <p>Various (mathematical) forms of the tf*idf term weight can be derived from a probabilistic retrieval model that mimicks human relevance decision making.</p>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h2>
+                    <p>Consider a document containing 100 words wherein the word <i>cow</i> appears 3 times. Following the previously defined formulas, the term frequency (TF) for <i>cow</i> is then (3 / 100) = 0.03. Now, assume we have 10 million documents and <i>cow</i> appears in one thousand of these. Then, the inverse document frequency is calculated as log(10 000 000 / 1 000) = 4. The tf*idf score is the product of these quantities: 0.03 × 4 = 0.12.</p>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+                    <ul>
+                        <li><a href="/wiki/Okapi_BM25" title="Okapi BM25">Okapi BM25</a></li>
+                        <li><a href="/wiki/Noun_phrase" title="Noun phrase">Noun phrase</a></li>
+                        <li><a href="/wiki/Word_count" title="Word count">Word count</a></li>
+                        <li><a href="/wiki/Kullback-Leibler_divergence" title="Kullback-Leibler divergence" class="mw-redirect">Kullback-Leibler divergence</a></li>
+                        <li><a href="/wiki/Mutual_Information" title="Mutual Information" class="mw-redirect">Mutual Information</a></li>
+                        <li><a href="/wiki/Latent_semantic_analysis" title="Latent semantic analysis">Latent semantic analysis</a></li>
+                        <li><a href="/wiki/Latent_semantic_indexing" title="Latent semantic indexing">Latent semantic indexing</a></li>
+                        <li><a href="/wiki/Latent_Dirichlet_allocation" title="Latent Dirichlet allocation">Latent Dirichlet allocation</a></li>
+                    </ul>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+                    <ul>
+                        <li><span class="citation Journal"><a href="/wiki/Karen_Sp%C3%A4rck_Jones" title="Karen Spärck Jones">Spärck Jones, Karen</a> (1972). <a rel="nofollow" class="external text" href="http://www.soi.city.ac.uk/~ser/idfpapers/ksj_orig.pdf">"A statistical interpretation of term specificity and its application in retrieval"</a>. <i><a href="/wiki/Journal_of_Documentation" title="Journal of Documentation">Journal of Documentation</a></i> <b>28</b> (1): 11–21. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1108%2Feb026526">10.1108/eb026526</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://www.soi.city.ac.uk/~ser/idfpapers/ksj_orig.pdf">http://www.soi.city.ac.uk/~ser/idfpapers/ksj_orig.pdf</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+statistical+interpretation+of+term+specificity+and+its+application+in+retrieval&amp;rft.jtitle=%5B%5BJournal+of+Documentation%5D%5D&amp;rft.aulast=%5B%5BKaren+Sp%C3%A4rck+Jones%7CSp%C3%A4rck+Jones%2C+Karen%5D%5D&amp;rft.au=%5B%5BKaren+Sp%C3%A4rck+Jones%7CSp%C3%A4rck+Jones%2C+Karen%5D%5D&amp;rft.date=1972&amp;rft.volume=28&amp;rft.issue=1&amp;rft.pages=11%E2%80%9321&amp;rft_id=info:doi/10.1108%2Feb026526&amp;rft_id=http%3A%2F%2Fwww.soi.city.ac.uk%2F%7Eser%2Fidfpapers%2Fksj_orig.pdf&amp;rfr_id=info:sid/en.wikipedia.org:Tf*idf"><span style="display: none;">&#160;</span></span></li>
+                        <li><span class="citation book"><a href="/wiki/Gerard_Salton" title="Gerard Salton">Salton, G.</a> and M. J. McGill (1983). <i>Introduction to modern information retrieval</i>. <a href="/wiki/McGraw-Hill" title="McGraw-Hill">McGraw-Hill</a>. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0070544840" title="Special:BookSources/0070544840">0070544840</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+modern+information+retrieval&amp;rft.aulast=%5B%5BGerard+Salton%7CSalton%2C+G.%5D%5D+and+M.+J.+McGill&amp;rft.au=%5B%5BGerard+Salton%7CSalton%2C+G.%5D%5D+and+M.+J.+McGill&amp;rft.date=1983&amp;rft.pub=%5B%5BMcGraw-Hill%5D%5D&amp;rft.isbn=0070544840&amp;rfr_id=info:sid/en.wikipedia.org:Tf*idf"><span style="display: none;">&#160;</span></span></li>
+                        <li><span class="citation Journal">Salton, Gerard, Edward A. Fox &amp; Harry Wu (November 1983). <a rel="nofollow" class="external text" href="http://portal.acm.org/citation.cfm?id=358466">"Extended Boolean information retrieval"</a>. <i><a href="/wiki/Communications_of_the_ACM" title="Communications of the ACM">Communications of the ACM</a></i> <b>26</b> (11): 1022–1036. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F182.358466">10.1145/182.358466</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://portal.acm.org/citation.cfm?id=358466">http://portal.acm.org/citation.cfm?id=358466</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Extended+Boolean+information+retrieval&amp;rft.jtitle=%5B%5BCommunications+of+the+ACM%5D%5D&amp;rft.aulast=Salton%2C+Gerard%2C+Edward+A.+Fox+%26+Harry+Wu&amp;rft.au=Salton%2C+Gerard%2C+Edward+A.+Fox+%26+Harry+Wu&amp;rft.date=November+1983&amp;rft.volume=26&amp;rft.issue=11&amp;rft.pages=1022%E2%80%931036&amp;rft_id=info:doi/10.1145%2F182.358466&amp;rft_id=http%3A%2F%2Fportal.acm.org%2Fcitation.cfm%3Fid%3D358466&amp;rfr_id=info:sid/en.wikipedia.org:Tf*idf"><span style="display: none;">&#160;</span></span></li>
+                        <li><span class="citation Journal">Salton, Gerard and Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval". <i><a href="/w/index.php?title=Information_Processing_%26_Management&amp;action=edit&amp;redlink=1" class="new" title="Information Processing &amp; Management (page does not exist)">Information Processing &amp; Management</a></i> <b>24</b> (5): 513–523. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2F0306-4573%2888%2990021-0">10.1016/0306-4573(88)90021-0</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Term-weighting+approaches+in+automatic+text+retrieval&amp;rft.jtitle=%5B%5BInformation+Processing+%26+Management%5D%5D&amp;rft.aulast=Salton%2C+Gerard+and+Buckley%2C+C.&amp;rft.au=Salton%2C+Gerard+and+Buckley%2C+C.&amp;rft.date=1988&amp;rft.volume=24&amp;rft.issue=5&amp;rft.pages=513%E2%80%93523&amp;rft_id=info:doi/10.1016%2F0306-4573%2888%2990021-0&amp;rfr_id=info:sid/en.wikipedia.org:Tf*idf"><span style="display: none;">&#160;</span></span></li>
+                        <li><span class="citation Journal">H.C. Wu, R.W.P. Luk, K.F. Wong, K.L. Kwok (2008). "Interpreting tf–idf term weights as making relevance decisions". <i><a href="/w/index.php?title=ACM_Transactions_on_Information_Systems&amp;action=edit&amp;redlink=1" class="new" title="ACM Transactions on Information Systems (page does not exist)">ACM Transactions on Information Systems</a></i> <b>26</b> (3): 1–37. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F1361684.1361686">10.1145/1361684.1361686</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Interpreting+tf%E2%80%93idf+term+weights+as+making+relevance+decisions&amp;rft.jtitle=%5B%5BACM+Transactions+on+Information+Systems%5D%5D&amp;rft.aulast=H.C.+Wu%2C+R.W.P.+Luk%2C+K.F.+Wong%2C+K.L.+Kwok&amp;rft.au=H.C.+Wu%2C+R.W.P.+Luk%2C+K.F.+Wong%2C+K.L.+Kwok&amp;rft.date=2008&amp;rft.volume=26&amp;rft.issue=3&amp;rft.pages=1%E2%80%9337&amp;rft_id=info:doi/10.1145%2F1361684.1361686&amp;rfr_id=info:sid/en.wikipedia.org:Tf*idf"><span style="display: none;">&#160;</span></span></li>
+                    </ul>
+                    <h2><span class="editsection">[<a href="/w/index.php?title=Tf*idf&amp;action=edit&amp;section=6" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+                    <ul>
+                        <li><a rel="nofollow" class="external text" href="http://nlp.fi.muni.cz/projekty/gensim">Gensim</a> is a Python+<a href="/wiki/NumPy" title="NumPy">NumPy</a> framework for Vector Space modelling. It contains incremental (memory-efficient) algorithms for Tf–idf, <a href="/wiki/Latent_Semantic_Indexing" title="Latent Semantic Indexing" class="mw-redirect">Latent Semantic Indexing</a> and <a href="/wiki/Latent_Dirichlet_Allocation" title="Latent Dirichlet Allocation" class="mw-redirect">Latent Dirichlet Allocation</a>.</li>
+                        <li><a rel="nofollow" class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.101.9086">Term Weighting Approaches in Automatic Text Retrieval</a></li>
+                        <li><a rel="nofollow" class="external text" href="http://bscit.berkeley.edu/cgi-bin/pl_dochome?query_src=&amp;format=html&amp;collection=Wilensky_papers&amp;id=3&amp;show_doc=yes">Robust Hyperlinking</a>: An application of tf–idf for stable document addressability.</li>
+                        <li><a rel="nofollow" class="external text" href="http://infinova.wordpress.com/2010/01/26/distance-between-documents/">A demo of using tf–idf with PHP and Euclidean distance for Classification</a></li>
+                        <li><a rel="nofollow" class="external text" href="http://www.codeproject.com/KB/IP/AnatomyOfASearchEngine1.aspx">Anatomy of a search engine</a></li>
+                        <li><a rel="nofollow" class="external text" href="http://lucene.apache.org/java/3_2_0/api/core/org/apache/lucene/search/Similarity.html">tf–idf and related definitions</a> as used in <a href="/wiki/Lucene" title="Lucene">Lucene</a></li>
+                        <li><a rel="nofollow" class="external text" href="http://scikit-learn.sourceforge.net/modules/generated/scikits.learn.feature_extraction.text.TfidfTransformer.html#scikits.learn.feature_extraction.text.TfidfTransformer">tf–idf support in scikit-learn</a></li>
+                        <li><a rel="nofollow" class="external text" href="http://scgroup.hpclab.ceid.upatras.gr/scgroup/Projects/TMG/">Text to Matrix Generator (TMG)</a> MATLAB toolbox that can be used for various tasks in text mining (TM) specifically i) indexing, ii) retrieval, iii) dimensionality reduction, iv) clustering, v) classification. The indexing step offers the user the ability to apply local and global weighting methods, including tf–idf.</li>
+                        <li><a rel="nofollow" class="external text" href="http://pyevolve.sourceforge.net/wordpress/?p=1589">Pyevolve: A tutorial series explaining the tf-idf calculation</a>.</li>
+                    </ul>
+                    <div class="reflist" style="list-style-type: decimal;">
+                        <ol class="references">
+                            <li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://vetsky.narod2.ru/catalog/tfidf_ranker/">TF*IDF Ranker</a></span></li>
+                        </ol>
+                    </div>
+                    
+                    
+                    <!-- 
+                     NewPP limit report
+                     Preprocessor node count: 4114/1000000
+                     Post-expand include size: 30984/2048000 bytes
+                     Template argument size: 9368/2048000 bytes
+                     Expensive parser function count: 3/500
+                     -->
+                    
+                    <!-- Saved in parser cache with key enwiki:pcache:idhash:2057290-0!0!0!!en!4!* and timestamp 20120320192741 -->
+                </div>				<!-- /bodycontent -->
+                <!-- printfooter -->
+				<div class="printfooter">
+                    Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Tf*idf&amp;oldid=480842346">http://en.wikipedia.org/w/index.php?title=Tf*idf&amp;oldid=480842346</a>"				</div>
+				<!-- /printfooter -->
+                <!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Information_retrieval" title="Category:Information retrieval">Information retrieval</a></li><li><a href="/wiki/Category:Artificial_intelligence_applications" title="Category:Artificial intelligence applications">Artificial intelligence applications</a></li><li><a href="/wiki/Category:Statistical_natural_language_processing" title="Category:Statistical natural language processing">Statistical natural language processing</a></li><li><a href="/wiki/Category:Ranking_functions" title="Category:Ranking functions">Ranking functions</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Computer_science_articles_needing_expert_attention" title="Category:Computer science articles needing expert attention">Computer science articles needing expert attention</a></li><li><a href="/wiki/Category:Articles_needing_expert_attention_from_February_2012" title="Category:Articles needing expert attention from February 2012">Articles needing expert attention from February 2012</a></li><li><a href="/wiki/Category:All_articles_needing_expert_attention" title="Category:All articles needing expert attention">All articles needing expert attention</a></li></ul></div></div>				<!-- /catlinks -->
+                <div class="visualClear"></div>
+				<!-- debughtml -->
+                <!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+            <!-- 0 -->
+            <div id="p-personal" class="">
+                <h5>Personal tools</h5>
+                <ul>
+                    <li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Tf%2Aidf" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+                </ul>
+            </div>
+            
+            <!-- /0 -->
+			<div id="left-navigation">
+				
+                <!-- 0 -->
+                <div id="p-namespaces" class="vectorTabs">
+                    <h5>Namespaces</h5>
+                    <ul>
+                        <li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Tf*idf"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+                        <li  id="ca-talk"><span><a href="/wiki/Talk:Tf*idf"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+                    </ul>
+                </div>
+                
+                <!-- /0 -->
+                
+                <!-- 1 -->
+                <div id="p-variants" class="vectorMenu emptyPortlet">
+                    <h4>
+                    </h4>
+                    <h5><span>Variants</span><a href="#"></a></h5>
+                    <div class="menu">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+                <!-- 0 -->
+                <div id="p-views" class="vectorTabs">
+                    <h5>Views</h5>
+                    <ul>
+                        <li id="ca-view" class="selected"><span><a href="/wiki/Tf*idf" >Read</a></span></li>
+                        <li id="ca-edit"><span><a href="/w/index.php?title=Tf*idf&amp;action=edit"  title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e">Edit</a></span></li>
+                        <li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Tf*idf&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+                    </ul>
+                </div>
+                
+                <!-- /0 -->
+                
+                <!-- 1 -->
+                <div id="p-cactions" class="vectorMenu emptyPortlet">
+                    <h5><span>Actions</span><a href="#"></a></h5>
+                    <div class="menu">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- /1 -->
+                
+                <!-- 2 -->
+                <div id="p-search">
+                    <h5><label for="searchInput">Search</label></h5>
+                    <form action="/w/index.php" id="searchform">
+                        <div id="simpleSearch">
+                            <input type="text" name="search" value="" title="Search Wikipedia [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search Wikipedia for this text" id="searchButton"><img src="//bits.wikimedia.org/skins-1.19/vector/images/search-ltr.png?303-4" alt="Search" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+        <div id="mw-panel" class="noprint">
+            <!-- logo -->
+            <div id="p-logo"><a style="background-image: url(//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+            <!-- /logo -->
+            
+            <!-- navigation -->
+            <div class="portal" id='p-navigation'>
+                <h5>Navigation</h5>
+                <div class="body">
+                    <ul>
+                        <li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+                        <li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+                        <li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+                        <li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+                        <li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+                        <li id="n-sitesupport"><a href="//wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- /navigation -->
+            
+            <!-- SEARCH -->
+            
+            <!-- /SEARCH -->
+            
+            <!-- interaction -->
+            <div class="portal" id='p-interaction'>
+                <h5>Interaction</h5>
+                <div class="body">
+                    <ul>
+                        <li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+                        <li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+                        <li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+                        <li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+                        <li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- /interaction -->
+            
+            <!-- TOOLBOX -->
+            <div class="portal" id='p-tb'>
+                <h5>Toolbox</h5>
+                <div class="body">
+                    <ul>
+                        <li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Tf*idf" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+                        <li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Tf*idf" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+                        <li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+                        <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+                        <li id="t-permalink"><a href="/w/index.php?title=Tf*idf&amp;oldid=480842346" title="Permanent link to this revision of the page">Permanent link</a></li>
+                        <li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Tf*idf&amp;id=480842346" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+                </div>
+            </div>
+            
+            <!-- /TOOLBOX -->
+            
+            <!-- coll-print_export -->
+            <div class="portal" id='p-coll-print_export'>
+                <h5>Print/export</h5>
+                <div class="body">
+                    <ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Tf%2Aidf" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Tf%2Aidf&amp;oldid=480842346&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Tf*idf&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>	</div>
+            </div>
+            
+            <!-- /coll-print_export -->
+            
+            <!-- LANGUAGES -->
+            <div class="portal" id='p-lang'>
+                <h5>Languages</h5>
+                <div class="body">
+                    <ul>
+                        <li class="interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D8%AA%D9%8A_%D8%A7%D9%81-%D8%A7%D9%8A_%D8%AF%D9%8A_%D8%AF%D9%81" title="تي اف-اي دي دف" lang="ar" hreflang="ar">العربية</a></li>
+                        <li class="interwiki-cs"><a href="//cs.wikipedia.org/wiki/Tf-idf" title="Tf-idf" lang="cs" hreflang="cs">Česky</a></li>
+                        <li class="interwiki-de"><a href="//de.wikipedia.org/wiki/Tf-idf-Ma%C3%9F" title="Tf-idf-Maß" lang="de" hreflang="de">Deutsch</a></li>
+                        <li class="interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%88%D8%A7%D9%86%DB%8C_%D9%88%D8%B2%D9%86%DB%8C_%D8%AA%DB%8C%E2%80%8C%D8%A7%D9%81%E2%80%8C-%D8%A2%DB%8C%E2%80%8C%D8%AF%DB%8C%E2%80%8C%D8%A7%D9%81" title="فراوانی وزنی تی‌اف‌-آی‌دی‌اف" lang="fa" hreflang="fa">فارسی</a></li>
+                        <li class="interwiki-fr"><a href="//fr.wikipedia.org/wiki/TF-IDF" title="TF-IDF" lang="fr" hreflang="fr">Français</a></li>
+                        <li class="interwiki-ko"><a href="//ko.wikipedia.org/wiki/TF-IDF" title="TF-IDF" lang="ko" hreflang="ko">한국어</a></li>
+                        <li class="interwiki-it"><a href="//it.wikipedia.org/wiki/Tf-idf" title="Tf-idf" lang="it" hreflang="it">Italiano</a></li>
+                        <li class="interwiki-ja"><a href="//ja.wikipedia.org/wiki/Tf-idf" title="Tf-idf" lang="ja" hreflang="ja">日本語</a></li>
+                        <li class="interwiki-pl"><a href="//pl.wikipedia.org/wiki/TFIDF" title="TFIDF" lang="pl" hreflang="pl">Polski</a></li>
+                        <li class="interwiki-ru"><a href="//ru.wikipedia.org/wiki/TF-IDF" title="TF-IDF" lang="ru" hreflang="ru">Русский</a></li>
+                        <li class="interwiki-zh"><a href="//zh.wikipedia.org/wiki/TF-IDF" title="TF-IDF" lang="zh" hreflang="zh">中文</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- /LANGUAGES -->
+        </div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+            <ul id="footer-info">
+                <li id="footer-info-lastmod"> This page was last modified on 8 March 2012 at 14:55.<br /></li>
+                <li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+                    additional terms may apply.
+                    See <a href="//wikimediafoundation.org/wiki/Terms_of_use">Terms of use</a> for details.<br/>
+                    Wikipedia&reg; is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+            </ul>
+            <ul id="footer-places">
+                <li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+                <li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+                <li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+                <li id="footer-places-mobileview"><a href='//en.m.wikipedia.org/w/index.php?title=Tf*idf&amp;useformat=mobile' class='noprint'>Mobile view</a></li>
+            </ul>
+            <ul id="footer-icons" class="noprint">
+                <li id="footer-copyrightico">
+                    <a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+                </li>
+                <li id="footer-poweredbyico">
+                    <a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/skins-1.19/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+                </li>
+            </ul>
+            <div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+        <script type="text/javascript">if(window.mw){
+            mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.legacy.mwsuggest","ext.gadget.teahouse","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","ext.vector.simpleSearch","ext.UserBuckets","ext.articleFeedback.startup","ext.articleFeedbackv5.startup","ext.markAsHelpful"], null, true);
+        }</script>
+        <script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;303-4" type="text/javascript"></script>
+        <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+        <script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv211 in 0.117 secs. -->
+	</body>
+</html>

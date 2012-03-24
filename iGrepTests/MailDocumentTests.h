@@ -11,7 +11,7 @@
 #import "CXDocument.h"
 #import "CXMailDocument.h"
 
-@interface DocumentTests : SenTestCase
+@interface MailDocumentTests : SenTestCase
 
 @property(strong) CXMailDocument *document;
 

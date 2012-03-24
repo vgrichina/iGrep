@@ -17,6 +17,10 @@
 		D50BA50E15042634003D88DC /* DocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50BA50C15042634003D88DC /* DocumentViewController.xib */; };
 		D53DB58E151D1A76003061B1 /* CXMailDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB58D151D1A76003061B1 /* CXMailDocument.m */; };
 		D53DB58F151D1A81003061B1 /* CXMailDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB58D151D1A76003061B1 /* CXMailDocument.m */; };
+		D53DB592151D29B7003061B1 /* HtmlDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB591151D29B7003061B1 /* HtmlDocumentTests.m */; };
+		D53DB595151D2AAA003061B1 /* CXHtmlDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB594151D2AAA003061B1 /* CXHtmlDocument.m */; };
+		D53DB596151D2AAA003061B1 /* CXHtmlDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D53DB594151D2AAA003061B1 /* CXHtmlDocument.m */; };
+		D53DB598151D2C28003061B1 /* tfidf.html in Resources */ = {isa = PBXBuildFile; fileRef = D53DB597151D2C28003061B1 /* tfidf.html */; };
 		D5446691150AC4C100BDAE22 /* maildir.zip in Resources */ = {isa = PBXBuildFile; fileRef = D5446690150AC4C100BDAE22 /* maildir.zip */; };
 		D54466B4150AC59800BDAE22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
 		D54466BE150AC5C500BDAE22 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D54466A3150AC51400BDAE22 /* ioapi.c */; };
@@ -43,7 +47,7 @@
 		D56308431503B56700F3187F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DD15013C1400D78E99 /* UIKit.framework */; };
 		D56308441503B56700F3187F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED17DF15013C1400D78E99 /* Foundation.framework */; };
 		D563084A1503B56700F3187F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D56308481503B56700F3187F /* InfoPlist.strings */; };
-		D56308541503B58100F3187F /* DocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308531503B58100F3187F /* DocumentTests.m */; };
+		D56308541503B58100F3187F /* MailDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308531503B58100F3187F /* MailDocumentTests.m */; };
 		D56308551503B86500F3187F /* CXDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D56308211503ACE000F3187F /* CXDocument.m */; };
 		D56308561503B87300F3187F /* maildir in Resources */ = {isa = PBXBuildFile; fileRef = D56308231503B52100F3187F /* maildir */; };
 		D57F8568150ACFB5004A1C81 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D57F8567150ACFB5004A1C81 /* libz.dylib */; };
@@ -89,6 +93,11 @@
 		D50BA50C15042634003D88DC /* DocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DocumentViewController.xib; path = iGrep/DocumentViewController.xib; sourceTree = "<group>"; };
 		D53DB58C151D1A76003061B1 /* CXMailDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMailDocument.h; sourceTree = "<group>"; };
 		D53DB58D151D1A76003061B1 /* CXMailDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMailDocument.m; sourceTree = "<group>"; };
+		D53DB590151D29B7003061B1 /* HtmlDocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlDocumentTests.h; sourceTree = "<group>"; };
+		D53DB591151D29B7003061B1 /* HtmlDocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlDocumentTests.m; sourceTree = "<group>"; };
+		D53DB593151D2AA9003061B1 /* CXHtmlDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHtmlDocument.h; sourceTree = "<group>"; };
+		D53DB594151D2AAA003061B1 /* CXHtmlDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHtmlDocument.m; sourceTree = "<group>"; };
+		D53DB597151D2C28003061B1 /* tfidf.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tfidf.html; sourceTree = SOURCE_ROOT; };
 		D5446690150AC4C100BDAE22 /* maildir.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = maildir.zip; sourceTree = SOURCE_ROOT; };
 		D5446693150AC4F500BDAE22 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileInZipInfo.h; path = "objective-zip/Objective-Zip/FileInZipInfo.h"; sourceTree = "<group>"; };
 		D5446694150AC4F500BDAE22 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileInZipInfo.m; path = "objective-zip/Objective-Zip/FileInZipInfo.m"; sourceTree = "<group>"; };
@@ -117,8 +126,8 @@
 		D56308471503B56700F3187F /* iGrepTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iGrepTests-Info.plist"; sourceTree = "<group>"; };
 		D56308491503B56700F3187F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D563084E1503B56700F3187F /* iGrepTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iGrepTests-Prefix.pch"; sourceTree = "<group>"; };
-		D56308521503B58100F3187F /* DocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTests.h; sourceTree = "<group>"; };
-		D56308531503B58100F3187F /* DocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTests.m; sourceTree = "<group>"; };
+		D56308521503B58100F3187F /* MailDocumentTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailDocumentTests.h; sourceTree = "<group>"; };
+		D56308531503B58100F3187F /* MailDocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailDocumentTests.m; sourceTree = "<group>"; };
 		D57F8567150ACFB5004A1C81 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D5B73C4E15080FE800E34F33 /* CXSqliteDocumentsIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSqliteDocumentsIndex.h; sourceTree = "<group>"; };
 		D5B73C4F15080FE800E34F33 /* CXSqliteDocumentsIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSqliteDocumentsIndex.m; sourceTree = "<group>"; };
@@ -253,8 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				D56308461503B56700F3187F /* Supporting Files */,
-				D56308521503B58100F3187F /* DocumentTests.h */,
-				D56308531503B58100F3187F /* DocumentTests.m */,
+				D56308521503B58100F3187F /* MailDocumentTests.h */,
+				D56308531503B58100F3187F /* MailDocumentTests.m */,
+				D53DB590151D29B7003061B1 /* HtmlDocumentTests.h */,
+				D53DB591151D29B7003061B1 /* HtmlDocumentTests.m */,
 				D50BA5021503CA70003D88DC /* DocumentsIndexTests.h */,
 				D50BA5031503CA70003D88DC /* DocumentsIndexTests.m */,
 				D5B73C53150814AE00E34F33 /* SqliteIndexTests.h */,
@@ -271,6 +282,7 @@
 				D56308471503B56700F3187F /* iGrepTests-Info.plist */,
 				D56308481503B56700F3187F /* InfoPlist.strings */,
 				D563084E1503B56700F3187F /* iGrepTests-Prefix.pch */,
+				D53DB597151D2C28003061B1 /* tfidf.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -323,6 +335,8 @@
 				D5B73C57150816B700E34F33 /* CXRawFileIndex.m */,
 				D53DB58C151D1A76003061B1 /* CXMailDocument.h */,
 				D53DB58D151D1A76003061B1 /* CXMailDocument.m */,
+				D53DB593151D2AA9003061B1 /* CXHtmlDocument.h */,
+				D53DB594151D2AAA003061B1 /* CXHtmlDocument.m */,
 			);
 			path = iGrep;
 			sourceTree = "<group>";
@@ -442,6 +456,7 @@
 				D563084A1503B56700F3187F /* InfoPlist.strings in Resources */,
 				D56308561503B87300F3187F /* maildir in Resources */,
 				D57F856C150AD210004A1C81 /* maildir.zip in Resources */,
+				D53DB598151D2C28003061B1 /* tfidf.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +521,7 @@
 			files = (
 				D50BA4FD1503C7A9003D88DC /* MACollectionUtilities.m in Sources */,
 				D56308551503B86500F3187F /* CXDocument.m in Sources */,
-				D56308541503B58100F3187F /* DocumentTests.m in Sources */,
+				D56308541503B58100F3187F /* MailDocumentTests.m in Sources */,
 				D50BA5011503CA42003D88DC /* CXDocumentsIndex.m in Sources */,
 				D50BA5041503CA70003D88DC /* DocumentsIndexTests.m in Sources */,
 				D5B73C5115080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */,
@@ -514,6 +529,8 @@
 				D5B73C59150816B700E34F33 /* CXRawFileIndex.m in Sources */,
 				D5B73C5C1508231D00E34F33 /* RawFileIndexTests.m in Sources */,
 				D53DB58F151D1A81003061B1 /* CXMailDocument.m in Sources */,
+				D53DB592151D29B7003061B1 /* HtmlDocumentTests.m in Sources */,
+				D53DB596151D2AAA003061B1 /* CXHtmlDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +548,7 @@
 				D5B73C5015080FE800E34F33 /* CXSqliteDocumentsIndex.m in Sources */,
 				D5B73C58150816B700E34F33 /* CXRawFileIndex.m in Sources */,
 				D53DB58E151D1A76003061B1 /* CXMailDocument.m in Sources */,
+				D53DB595151D2AAA003061B1 /* CXHtmlDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

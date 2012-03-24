@@ -6,19 +6,17 @@
 //  Copyright (c) 2012 Vladimir Grichina. All rights reserved.
 //
 
-#import "DocumentTests.h"
+#import "MailDocumentTests.h"
 
 #import <sqlite3.h>
 
-@implementation DocumentTests
+@implementation MailDocumentTests
 
 @synthesize document;
 
 - (void)setUp
 {
-    sqlite3_config(SQLITE_CONFIG_SERIALIZED);
-
-    NSString *url = [[[[NSBundle bundleForClass:[CXDocument class]] bundleURL]
+    NSString *url = [[[[NSBundle bundleForClass:[CXMailDocument class]] bundleURL]
                       URLByAppendingPathComponent:@"maildir/mcconnell-m/_sent_mail/1."] absoluteString];
     self.document = [[CXMailDocument alloc] initWithURI:url];
 }
