@@ -27,7 +27,7 @@
 - (void)testTextContent
 {
     NSLog(@"%@", self.document.textContent);
-    STAssertEquals(self.document.textContent.length, 8586u, @"Has expected length");
+    STAssertEquals(self.document.textContent.length, 8518u, @"Has expected length");
 }
 
 - (void)testDate
@@ -37,13 +37,13 @@
 
 - (void)testTokens
 {
-    STAssertEquals(self.document.tokens.count, 1291u, @"Has expected number of tokens");
+    STAssertEquals(self.document.tokens.count, 1276u, @"Has expected number of tokens");
 }
 
 - (void)testTerms
 {
     NSLog(@"terms: %@", self.document.terms);
-    STAssertEquals(self.document.terms.count, 533u, @"Has expected number of terms");
+    STAssertEquals(self.document.terms.count, 516u, @"Has expected number of terms");
     STAssertEquals([[self.document.terms objectForKey:@"wikipedia"] intValue], 8, @"Term 'wikipedia' occurs expected number of times");
 }
 

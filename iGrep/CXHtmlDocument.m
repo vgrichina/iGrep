@@ -57,6 +57,10 @@
             if (!tidyOptSetBool(tdoc, TidyNumEntities, yes)) {
                 return nil;
             }
+            // Setup Tidy to use UTF-8
+            if (!tidyOptSetValue(tdoc, TidyCharEncoding, "utf8")) {
+                return nil;
+            }
             // Capture diagnostics
             if (tidySetErrorBuffer(tdoc, &errbuf) < 0) {
                 return nil;
