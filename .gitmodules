@@ -4,3 +4,6 @@
 [submodule "objective-zip"]
 	path = objective-zip
 	url = git://github.com/AgileBits/objective-zip.git
+[submodule "libtidy"]
+	path = libtidy
+	url = git://github.com/toddr/libtidy.git

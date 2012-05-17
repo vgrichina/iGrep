@@ -8,6 +8,9 @@
 
 #import "CXHtmlDocument.h"
 
+#import "tidy.h"
+#import "buffio.h"
+
 @implementation CXHtmlDocument
 
 - (NSString *)title
@@ -39,7 +42,42 @@
 {
     if (!_textContent) {
         if (self.content) {
-            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[self.content dataUsingEncoding:NSUTF8StringEncoding]];
+            // HTML may be malformed and needs to be run through Tidy
+
+            TidyBuffer output = {0};
+            TidyBuffer errbuf = {0};
+
+            TidyDoc tdoc = tidyCreate();
+
+            // Setup Tidy to convert into XML
+            if (!tidyOptSetBool(tdoc, TidyXmlOut, yes)) {
+                return nil;
+            }
+            // Setup Tidy to use numeric entities (e.g. instead of &nbsp; unsupported in XML).
+            if (!tidyOptSetBool(tdoc, TidyNumEntities, yes)) {
+                return nil;
+            }
+            // Capture diagnostics
+            if (tidySetErrorBuffer(tdoc, &errbuf) < 0) {
+                return nil;
+            }
+            // Parse the input
+            if (tidyParseString(tdoc, [self.content UTF8String]) < 0) {
+                return nil;
+            }
+            // Tidy it up!
+            if (tidyCleanAndRepair(tdoc) < 0) {
+                return nil;
+            }
+            // Pretty Print
+            if (tidySaveBuffer(tdoc, &output) < 0) {
+                return nil;
+            }
+
+            NSString *html = [NSString stringWithUTF8String:(char *)output.bp];
+
+            // Parse clean-up HTML using XML parser
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[html dataUsingEncoding:NSUTF8StringEncoding]];
             parser.delegate = self;
             _textContent = [NSMutableString string];
             if ([parser parse]) {
