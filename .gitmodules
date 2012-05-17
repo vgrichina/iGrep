@@ -6,4 +6,4 @@
 	url = git://github.com/AgileBits/objective-zip.git
 [submodule "libtidy"]
 	path = libtidy
-	url = git://github.com/toddr/libtidy.git
+	url = git://github.com/w3c/tidy-html5.git
