@@ -27,7 +27,7 @@
 - (void)testTextContent
 {
     NSLog(@"%@", self.document.textContent);
-    STAssertEquals(self.document.textContent.length, 8518u, @"Has expected length");
+    STAssertEquals(self.document.textContent.length, 8522u, @"Has expected length");
 }
 
 - (void)testDate
